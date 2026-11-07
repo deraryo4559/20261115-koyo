@@ -13,17 +13,21 @@ function run(command, args, cwd = root, capture = false) {
 function git(args, cwd = root, capture = false) { return run('git', args, cwd, capture); }
 function requireClean(cwd) {
   if (git(['status', '--porcelain'], cwd, true).trim()) {
-    throw new Error(`${cwd}: 未コミットの変更があります。内容を確認してcommitしてから再実行してください。自動commitは行いません。`);
+    throw new Error(`${cwd}: 未コミットの変更があります。内容を確認してcommitしてから再実行してください。公開用コピーの変更は自動commitしません。`);
   }
 }
 try {
   if (git(['branch', '--show-current'], root, true).trim() !== 'main') throw new Error('mainブランチで実行してください。');
-  requireClean(root);
   if (git(['remote', 'get-url', 'origin'], root, true).trim() !== remote) throw new Error('originが想定した公開先と異なります。');
   run(process.execPath, ['scripts/check-private-files.mjs']);
   git(['fetch', 'origin', 'main']);
   git(['merge-base', '--is-ancestor', 'origin/main', 'HEAD']);
-  const revision = git(['rev-parse', 'HEAD'], root, true).trim();
+  const sourceHead = git(['rev-parse', 'HEAD'], root, true).trim();
+  // Honor .gitignore; never force-add private material. Inspect both tracked and staged paths.
+  git(['add', '--all']);
+  run(process.execPath, ['scripts/check-private-files.mjs']);
+  run(process.execPath, ['scripts/check-private-files.mjs', '--staged']);
+  const sourceTree = git(['write-tree'], root, true).trim();
   console.log('\n公開パス付きで検証・ビルドします。');
   run('npm', ['run', 'check']);
   run(process.execPath, ['scripts/check-pages-artifact.mjs']);
@@ -40,8 +44,18 @@ try {
   git(['pull', '--ff-only'], publish);
   // Refuse a divergent local publication rather than publishing unrelated commits.
   git(['merge-base', '--is-ancestor', 'origin/gh-pages', 'HEAD'], publish);
+  if (git(['rev-parse', 'HEAD'], root, true).trim() !== sourceHead ||
+      git(['write-tree'], root, true).trim() !== sourceTree ||
+      git(['diff', '--name-only'], root, true).trim() ||
+      git(['ls-files', '--others', '--exclude-standard'], root, true).trim()) {
+    throw new Error('検証中にソースが変更されました。再実行してください。');
+  }
+  run(process.execPath, ['scripts/check-private-files.mjs', '--staged']);
+  if (git(['diff', '--cached', '--name-only'], root, true).trim()) {
+    git(['commit', '-m', 'Update site for deployment']);
+  }
   requireClean(root);
-  if (git(['rev-parse', 'HEAD'], root, true).trim() !== revision) throw new Error('ビルド中にソースが変更されました。再実行してください。');
+  const revision = git(['rev-parse', 'HEAD'], root, true).trim();
   git(['push', 'origin', 'main']);
   run('rsync', ['-a', '--delete', '--exclude=.git/', `${root}/dist/client/20261115-koyo/`, `${publish}/`]);
   writeFileSync(path.join(publish, '.nojekyll'), '');

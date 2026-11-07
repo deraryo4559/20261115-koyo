@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type * as Leaflet from 'leaflet';
 import { routeById } from '../data/routes';
+import { spotUrl } from '../lib/spot-url';
+import { layoutPhotoPins } from '../lib/photo-pin-layout';
 import { assetUrl } from '../lib/asset-url';
 import type { RouteFilter, Spot } from '../types/spot';
 import 'leaflet/dist/leaflet.css';
@@ -51,6 +53,16 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dismissedPreviewRef = useRef<string | null>(null);
   const previewStateRef = useRef<Preview | null>(null);
+  const [mobile, setMobile] = useState(false);
+  const [photoPins, setPhotoPins] = useState<ReturnType<typeof layoutPhotoPins>>([]);
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 767px)');
+    const update = () => setMobile(query.matches);
+    update();
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
+
   const [hasActivated, setHasActivated] = useState(active);
   const [ready, setReady] = useState(0);
   const [retry, setRetry] = useState(0);
@@ -208,6 +220,7 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
     markerRefs.current.clear();
     const unbind: (() => void)[] = [];
 
+    if (mobile) return;
     visibleSpots.forEach((spot) => {
       const route = routeById[spot.routeId];
       const marker = leaflet.marker(spot.coordinates, {
@@ -269,7 +282,22 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
       markerLayer.addLayer(marker);
     });
     return () => unbind.forEach((remove) => remove());
-  }, [ready, visibleSpots, closePreview, cancelTimers, scheduleClose, showPreview, chooseSpot]);
+  }, [ready, mobile, visibleSpots, closePreview, cancelTimers, scheduleClose, showPreview, chooseSpot]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready || !mobile) { setPhotoPins([]); return; }
+    const update = () => {
+      const size = map.getSize();
+      setPhotoPins(layoutPhotoPins(visibleSpots.map((spot) => {
+        const point = map.latLngToContainerPoint(spot.coordinates);
+        return { id: spot.id, x: point.x, y: point.y };
+      }), size.x, size.y));
+    };
+    update();
+    map.on('move zoom resize', update);
+    return () => { map.off('move zoom resize', update); };
+  }, [mobile, ready, visibleSpots]);
 
   // A filter change or explicit reset fits the bounds; detail dismissal preserves the view.
   useEffect(() => {
@@ -356,12 +384,35 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
       }
     }}>
       <div className="spot-map-canvas" ref={containerRef} />
+      {mobile && <div className="mobile-photo-pins">
+        <svg className="photo-pin-lines" aria-hidden="true">
+          {photoPins.map((pin) => {
+            const spot = visibleSpots.find((item) => item.id === pin.id);
+            if (!spot) return null;
+            const color = routeById[spot.routeId].color;
+            return <g key={pin.id}>
+              <line x1={pin.left + 30} y1={pin.top + 48} x2={pin.x} y2={pin.y} stroke={color} />
+              <circle cx={pin.x} cy={pin.y} r="2.5" fill={color} />
+            </g>;
+          })}
+        </svg>
+        {photoPins.map((pin) => {
+          const spot = visibleSpots.find((item) => item.id === pin.id);
+          if (!spot) return null;
+          return <a key={spot.id} className="mobile-photo-pin" href={spotUrl(spot.id)}
+            aria-label={`${spot.name}の写真アルバムを見る`}
+            style={{ left: pin.left, top: pin.top, borderColor: routeById[spot.routeId].color }}>
+            <PreviewPhoto spot={spot} />
+            <i aria-hidden="true" style={{ borderTopColor: routeById[spot.routeId].color }} />
+          </a>;
+        })}
+      </div>}
       {status === 'loading' && <p className="spot-map-loading" role="status">地図を読み込んでいます…</p>}
       {(status === 'error' || status === 'partial') && <div className="spot-map-error" role="status">
         <p>{status === 'error' ? '地図を読み込めませんでした。' : '地図の一部を読み込めませんでした。'}<span>下の一覧から引き続きスポットを選べます。</span></p>
         <button type="button" onClick={() => setRetry((value) => value + 1)}>再読み込み</button>
       </div>}
-      {preview && !selectedId && <div
+      {!mobile && preview && !selectedId && <div
         className="spot-map-preview"
         ref={previewRef}
         role="dialog"

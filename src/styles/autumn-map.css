@@ -67,3 +67,7 @@
 
 .autumn-home .spot-map .map-pin { pointer-events: none; }
 .autumn-home .spot-map .map-pin-body, .autumn-home .spot-map .map-pin-center { pointer-events: auto; }
+
+@media (max-width: 767px) {
+  .autumn-home .map-legend { order: -1; border-bottom: 0; padding: 0 0 14px; }
+}
