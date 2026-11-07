@@ -78,7 +78,7 @@ git status --short
 
 公開先は [紅葉ドライブ地図](https://deraryo4559.github.io/20261115-koyo/) です。
 
-ソースは `main`、公開済みの静的ファイルは独立した `gh-pages` ブランチで管理します。`main` へのpushとPull RequestではGitHub Actionsによる検査・ビルドを行います。サイトの更新は、検証済みの成果物を `gh-pages` へpushして行います。
+ソースは `main`、公開済みの静的ファイルは独立した `gh-pages` ブランチで管理します。検査・ビルドはローカルの `npm run deploy` で行います。サイトの更新は、検証済みの成果物を `gh-pages` へpushして行います。
 
 - Pagesの公開元：**Deploy from a branch → gh-pages → / (root)**。
 - 公開パス：`/20261115-koyo/`（ワークフローの `SITE_BASE_PATH`）。
@@ -87,26 +87,17 @@ git status --short
 - サーバー用コードや `requirment/` はPagesのアップロード対象に含めません。
 - 公開ブランチの `.nojekyll` により、静的ファイルをそのまま配信します。
 
-更新時はまず上記の `npm run check` を公開パス付きで実行し、下記の成果物チェックにも合格させます。初回だけ `gh-pages` の作業用コピーを作成します。
+更新は、変更を確認して `main` にcommitした後、次のコマンドだけで行います。
 
 ```sh
-git clone --single-branch --branch gh-pages https://github.com/deraryo4559/20261115-koyo.git .local/pages-publish
+npm run deploy
 ```
 
-以後の公開手順（プロジェクトのルートから実行）：
+検証・公開用ビルド・成果物の非公開ファイル検査に成功した場合だけ、`main` と `gh-pages` を順にpushします。未コミットの変更がある場合は停止し、自動でcommit・stash・変更の破棄はしません。初回は `.local/pages-publish` を自動作成します。公開内容に変更がなければ空のcommitは作りません。途中で失敗した場合は原因を解消して再実行してください。
 
-```sh
-SITE_BASE_PATH=/20261115-koyo npm run check
-SITE_BASE_PATH=/20261115-koyo node scripts/check-pages-artifact.mjs
-git -C .local/pages-publish pull --ff-only
-rsync -a --delete --exclude='.git/' dist/client/20261115-koyo/ .local/pages-publish/
-touch .local/pages-publish/.nojekyll
-git -C .local/pages-publish add .
-git -C .local/pages-publish commit -m "Update published site"
-git -C .local/pages-publish push origin gh-pages
-```
+`main` がリモートより古い場合や履歴が分岐している場合は停止します。公開用コピーに未コミットの変更が残った場合も停止するため、その内容を確認してから再実行してください。`rsync --delete` の対象は公開ブランチ専用コピーのみです。
 
-`rsync` のコピー先は公開ブランチ専用です。手書きのソースや非公開資料を置かないでください。`main` だけをpushしても公開サイトは更新されません。
+自作の `Check GitHub Pages build` は自動起動を無効化しています。標準の `pages build and deployment` は引き続き必要です。送信成功と公開完了は別で、GitHub側の公開処理が請求問題で停止する場合は請求設定の解消が必要です。
 
 同じ公開パスで手元の成果物を確認する場合：
 

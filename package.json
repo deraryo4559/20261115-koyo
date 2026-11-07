@@ -14,7 +14,8 @@
     "test": "vitest run",
     "check:privacy": "node scripts/check-private-files.mjs",
     "check": "npm run check:privacy && npm run typecheck && npm test && npm run build",
-    "prepare": "node scripts/setup-hooks.mjs"
+    "prepare": "node scripts/setup-hooks.mjs",
+    "deploy": "node scripts/deploy.mjs"
   },
   "dependencies": {
     "leaflet": "1.9.4",
