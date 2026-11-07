@@ -8,7 +8,7 @@ export default function SpotPhoto({ spot, eager = false, className = '' }: { spo
   const photo = spot.photo;
   return <span className={`photo-frame ${className}`}>
     {photo && failedSrc !== photo.src
-      ? <img src={assetUrl(photo.src)} alt={photo.alt} width={960} height={640} loading={eager ? 'eager' : 'lazy'} decoding="async" onError={() => setFailedSrc(photo.src)} />
+      ? <img src={assetUrl(photo.thumbnailSrc ?? photo.src)} alt={photo.alt} width={960} height={640} loading={eager ? 'eager' : 'lazy'} decoding="async" onError={() => setFailedSrc(photo.src)} />
       : <span className="photo-fallback" role="img" aria-label={`${spot.name}：${photo ? '画像を読み込めません' : '写真確認中'}`}>
           <span aria-hidden="true">{photo ? '写真を読み込めませんでした' : '現地写真を確認中'}</span>
         </span>}

@@ -24,7 +24,21 @@ export default function KoyoApp() {
   const filtered = useMemo(() => filterSpots(state.route), [state.route]);
 
   useEffect(() => {
-    try { setState(restoreBrowseState(localStorage.getItem(STORAGE_KEY), spots)); } catch { /* browsing also works when storage is blocked */ }
+    let restored = initialState;
+    try { restored = restoreBrowseState(localStorage.getItem(STORAGE_KEY), spots); } catch { /* optional persistence */ }
+    const query = new URLSearchParams(window.location.search);
+    const requestedSpot = spots.find((spot) => spot.id === query.get('spot'));
+    if (query.get('view') === 'map' && requestedSpot) {
+      restored = { ...restored, view: 'map', route: requestedSpot.routeId, selectedId: requestedSpot.id };
+      setMapMounted(true);
+      setRevealRequest(1);
+      // Consume this one-time navigation request so browser Back restores later browsing choices.
+      const url = new URL(window.location.href);
+      url.searchParams.delete('view');
+      url.searchParams.delete('spot');
+      window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`);
+    }
+    setState(restored);
     setReady(true);
   }, []);
   useEffect(() => {
@@ -42,7 +56,7 @@ export default function KoyoApp() {
       if (trigger?.isConnected && trigger.getClientRects().length) trigger.focus({ preventScroll: true });
       else {
         const id = trigger?.dataset.spotId;
-        const fallback = id ? document.querySelector<HTMLButtonElement>(`#map-view .gallery-button[data-spot-id="${id}"]`) : null;
+        const fallback = id ? document.querySelector<HTMLAnchorElement>(`#map-view .gallery-button[data-spot-id="${id}"]`) : null;
         (fallback ?? document.getElementById('mode-map'))?.focus({ preventScroll: true });
       }
     });
@@ -99,7 +113,7 @@ export default function KoyoApp() {
     </header>
     <main id="main-content">
       <section id="scenery-view" className="album-section" aria-label="紅葉スポットの写真アルバム" hidden={state.view !== 'scenery'}>
-        <div className="content-width"><SpotGallery spots={filtered} onSelect={selectSpot} selectedId={state.selectedId} /></div>
+        <div className="content-width"><SpotGallery spots={filtered} /></div>
       </section>
       <section id="map-view" className="map-section" aria-label="地図から紅葉スポットを選ぶ" hidden={state.view !== 'map'}>
         <div className="map-caption content-width"><p>{filtered.length}スポット</p><span>ピンで写真を見る</span></div>
@@ -111,10 +125,10 @@ export default function KoyoApp() {
           </MapErrorBoundary>}
           {selected && <SpotDetails key={selected.id} spot={selected} onClose={closeDetails} />}
         </div>
-        <section className="map-index content-width" aria-label="地図と同じスポットの一覧"><h2>スポット一覧 <span>{filtered.length}</span></h2><SpotGallery spots={filtered} onSelect={selectSpot} selectedId={state.selectedId} compact /></section>
+        <section className="map-index content-width" aria-label="地図と同じスポットの一覧"><h2>スポット一覧 <span>{filtered.length}</span></h2><SpotGallery spots={filtered} compact /></section>
       </section>
     </main>
-    <footer className="site-footer content-width"><p>写真は過去の風景で、紅葉期以外の写真も含みます。見頃・営業情報は各スポットの公式サイトへ。</p><div><p>3つのルートは方面ごとの分類です。全地点を巡る行程ではありません。</p><Credits spots={spots} /></div></footer>
+    <footer className="site-footer content-width"><p>写真は過去の秋の風景です。現在の色づき・営業情報は各スポットの公式サイトへ。</p><div><p>3つのルートは方面ごとの分類です。全地点を巡る行程ではありません。</p><Credits spots={spots} /></div></footer>
     <p className="sr-only" role="status" aria-live="polite">{announcement}</p>
   </>;
 }

@@ -29,7 +29,7 @@ function PreviewPhoto({ spot }: { spot: Spot }) {
   if (!spot.photo || failed) {
     return <div className="spot-map-photo-fallback"><span>{spot.name}</span><small>{spot.photo ? "写真を読み込めません" : "現地写真を確認中"}</small></div>;
   }
-  return <img className="spot-map-preview-photo" src={assetUrl(spot.photo.src)} alt={spot.photo.alt} onError={() => setFailed(true)} width={600} height={400} />;
+  return <img className="spot-map-preview-photo" src={assetUrl(spot.photo.thumbnailSrc ?? spot.photo.src)} alt={spot.photo.alt} onError={() => setFailed(true)} width={600} height={400} />;
 }
 
 /** A client-only, persistent Leaflet map. Filtering changes bounds; closing a detail does not. */

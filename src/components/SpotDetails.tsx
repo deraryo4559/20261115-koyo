@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { routeById } from '../data/routes';
 import type { Spot } from '../types/spot';
 import SpotPhoto from './SpotPhoto';
+import { spotUrl } from '../lib/spot-url';
 
 export default function SpotDetails({ spot, onClose }: { spot: Spot; onClose: () => void }) {
   const [expanded, setExpanded] = useState(false);
@@ -17,7 +18,8 @@ export default function SpotDetails({ spot, onClose }: { spot: Spot; onClose: ()
       </div>
     </div>
     <div className="detail-actions">
-      <a href={spot.googleMapsUrl} className="primary-link" target="_blank" rel="noopener noreferrer">Googleマップで見る <span aria-hidden="true">↗</span></a>
+      <a href={spotUrl(spot.id)} className="primary-link">写真アルバムを見る <span aria-hidden="true">→</span></a>
+      <a href={spot.googleMapsUrl} className="text-button" target="_blank" rel="noopener noreferrer">Googleマップで見る <span aria-hidden="true">↗</span></a>
       <button type="button" className="text-button" onClick={() => setExpanded(!expanded)} aria-expanded={expanded} aria-controls="detail-more">{expanded ? '詳しい情報を閉じる −' : 'アクセス・写真の情報 ＋'}</button>
     </div>
     <div id="detail-more" className="detail-more" hidden={!expanded}>

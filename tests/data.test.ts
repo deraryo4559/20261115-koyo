@@ -30,17 +30,22 @@ describe('published spot catalog', () => {
     expect(links.size).toBe(19);
   });
 
-  it('only references existing local photos with reusable attribution metadata', () => {
+  it('gives every spot a distinct autumn album and an attributed local cover', () => {
     for (const spot of spots) {
-      if (!spot.photo) continue;
-      expect(spot.photo.src).toMatch(/^\/images\/spots\/p\d{2}\.webp$/);
-      const file = path.join(process.cwd(), 'public', spot.photo.src);
-      expect(existsSync(file)).toBe(true);
-      expect(readFileSync(file).subarray(8, 12).toString()).toBe('WEBP');
-      expect(spot.photo.credit.length).toBeGreaterThan(0);
-      expect(spot.photo.licenseUrl).toMatch(/^https:\/\/(creativecommons\.org|commons\.wikimedia\.org)\//);
-      expect(spot.photo.sourceUrl).toMatch(/^https:\/\//);
-      expect(spot.photo.caption).not.toBe('');
+      expect(spot.photos.length).toBeGreaterThanOrEqual(2);
+      expect(spot.photo).toBe(spot.photos[0]);
+      expect(new Set(spot.photos.map((photo) => photo.src)).size).toBe(spot.photos.length);
+      for (const photo of spot.photos) {
+        expect(photo.src).toMatch(/^\/images\/spots\/p\d{2}(?:-\d{2})?\.webp$/);
+        const file = path.join(process.cwd(), 'public', photo.src);
+        expect(existsSync(file)).toBe(true);
+        expect(readFileSync(file).subarray(8, 12).toString()).toBe('WEBP');
+        expect(photo.season).toBe('autumn');
+        expect(photo.credit.length).toBeGreaterThan(0);
+        expect(photo.licenseUrl).toMatch(/^https:\/\//);
+        expect(photo.sourceUrl).toMatch(/^https:\/\//);
+        expect(photo.caption).not.toBe('');
+      }
     }
   });
 });

@@ -4,6 +4,7 @@ export type ViewMode = 'scenery' | 'map';
 
 export interface Photo {
   src: string;
+  thumbnailSrc?: string;
   alt: string;
   caption: string;
   credit: string;
@@ -11,6 +12,8 @@ export interface Photo {
   license: string;
   licenseUrl: string;
   season: 'autumn' | 'other' | 'unknown';
+  width?: number;
+  height?: number;
 }
 
 export interface Spot {
@@ -30,4 +33,5 @@ export interface Spot {
   verifiedAt: string;
   coordinateStatus: 'verified' | 'approximate';
   photo: Photo | null;
+  photos: Photo[];
 }
