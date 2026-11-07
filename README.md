@@ -73,13 +73,35 @@ git status --short
 
 公開先は [紅葉ドライブ地図](https://deraryo4559.github.io/20261115-koyo/) です。
 
-`main` へのpushでGitHub Actionsが型検査・テスト・静的ビルドを実行し、合格した成果物をPagesへデプロイします。Pull Requestでは検査とビルドだけを行います。
+ソースは `main`、公開済みの静的ファイルは独立した `gh-pages` ブランチで管理します。`main` へのpushとPull RequestではGitHub Actionsによる検査・ビルドを行います。サイトの更新は、検証済みの成果物を `gh-pages` へpushして行います。
 
-- Pagesの公開元：**GitHub Actions**。
+- Pagesの公開元：**Deploy from a branch → gh-pages → / (root)**。
 - 公開パス：`/20261115-koyo/`（ワークフローの `SITE_BASE_PATH`）。
 - 公開対象：`dist/client/20261115-koyo/` の静的ファイルだけ。
 - 画像・favicon・JavaScript・CSSは公開パス付きのURLで読み込みます。
 - サーバー用コードや `requirment/` はPagesのアップロード対象に含めません。
+- 公開ブランチの `.nojekyll` により、静的ファイルをそのまま配信します。
+
+更新時はまず上記の `npm run check` を公開パス付きで実行し、下記の成果物チェックにも合格させます。初回だけ `gh-pages` の作業用コピーを作成します。
+
+```sh
+git clone --single-branch --branch gh-pages https://github.com/deraryo4559/20261115-koyo.git .local/pages-publish
+```
+
+以後の公開手順（プロジェクトのルートから実行）：
+
+```sh
+SITE_BASE_PATH=/20261115-koyo npm run check
+SITE_BASE_PATH=/20261115-koyo node scripts/check-pages-artifact.mjs
+git -C .local/pages-publish pull --ff-only
+rsync -a --delete --exclude='.git/' dist/client/20261115-koyo/ .local/pages-publish/
+touch .local/pages-publish/.nojekyll
+git -C .local/pages-publish add .
+git -C .local/pages-publish commit -m "Update published site"
+git -C .local/pages-publish push origin gh-pages
+```
+
+`rsync` のコピー先は公開ブランチ専用です。手書きのソースや非公開資料を置かないでください。`main` だけをpushしても公開サイトは更新されません。
 
 同じ公開パスで手元の成果物を確認する場合：
 
