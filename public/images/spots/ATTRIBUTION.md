@@ -130,53 +130,53 @@
 
 ### 写真 1
 
-- ファイル：`/images/spots/p06-01.webp`
-- 写真：旭日丘湖畔緑地公園の、もみじに包まれる散策路。
-- 出典・作者：[山中湖観光協会](https://lake-yamanakako.com/spot/10352)
-- 利用条件表記：[出典サイト掲載写真](https://lake-yamanakako.com/spot/10352)
-- サイズ：1673 × 1338
+- ファイル：`/images/spots/p06-04.webp`
+- 写真：旭日丘湖畔緑地公園の紅葉（ユーザー指定写真1）。
+- 出典・作者：[山中湖観光協会（ユーザー指定画像）](https://lake-yamanakako.com/storage/tourism_attractions/10439/responsive_images/jv7OLWLglsRXWcDkgKOTwOwd2OxtBHcOFolwgHSL__1672_1115.jpeg)
+- 利用条件表記：[ユーザー指定画像](https://lake-yamanakako.com/storage/tourism_attractions/10439/responsive_images/jv7OLWLglsRXWcDkgKOTwOwd2OxtBHcOFolwgHSL__1672_1115.jpeg)
+- サイズ：1672 × 1115
 
 ### 写真 2
 
-- ファイル：`/images/spots/p06-02.webp`
-- 写真：山中湖畔の紅葉と、夕暮れの富士山。
-- 出典・作者：[萱沼英己「晩秋の候」／山中湖観光協会](https://lake-yamanakako.com/spot/10352)
-- 利用条件表記：[出典サイト掲載写真](https://lake-yamanakako.com/spot/10352)
+- ファイル：`/images/spots/p06-05.webp`
+- 写真：旭日丘湖畔緑地公園の紅葉（ユーザー指定写真2）。
+- 出典・作者：[山中湖観光協会（ユーザー指定画像）](https://lake-yamanakako.com/storage/tourism_attractions/10352/responsive_images/zrECAsC7NUwnRHUDLQ4W4KMSdROFgZ4oEgY1KHsl__1673_1338.jpeg)
+- 利用条件表記：[ユーザー指定画像](https://lake-yamanakako.com/storage/tourism_attractions/10352/responsive_images/zrECAsC7NUwnRHUDLQ4W4KMSdROFgZ4oEgY1KHsl__1673_1338.jpeg)
 - サイズ：1673 × 1338
 
 ### 写真 3
 
-- ファイル：`/images/spots/p06-03.webp`
-- 写真：旭日丘湖畔緑地公園の秋色の木々と遊歩道。
-- 出典・作者：[山中湖観光協会](https://lake-yamanakako.com/spot/10352)
-- 利用条件表記：[出典サイト掲載写真](https://lake-yamanakako.com/spot/10352)
-- サイズ：1673 × 1338
+- ファイル：`/images/spots/p06-06.webp`
+- 写真：旭日丘湖畔緑地公園の紅葉（ユーザー指定写真3）。
+- 出典・作者：[bonddealerbook／PIXNET（ユーザー指定画像）](https://pimg.1px.tw/bonddealerbook/1755334054-352368639-g.jpg)
+- 利用条件表記：[ユーザー指定画像](https://pimg.1px.tw/bonddealerbook/1755334054-352368639-g.jpg)
+- サイズ：1920 × 1256
 
 ## P07 河口湖もみじ回廊
 
 ### 写真 1
 
-- ファイル：`/images/spots/p07-01.webp`
-- 写真：梨川沿いに連なるもみじ。昼の光で、赤と黄色の葉が重なります。
-- 出典・作者：[Fuji,CanGo（富士観光開発）](https://www.fuji-net.co.jp/report/cat-tourism-event/1112/)
-- 利用条件表記：[出典サイト掲載写真](https://www.fuji-net.co.jp/report/cat-tourism-event/1112/)
-- サイズ：1000 × 667
+- ファイル：`/images/spots/p07-04.webp`
+- 写真：ライトアップされた河口湖もみじ回廊の紅葉。
+- 出典・作者：[富士河口湖町観光連盟（ユーザー指定画像）](https://fujisan.ne.jp/wp/wp-content/uploads/2026/02/251120_0317-scaled.jpg)
+- 利用条件表記：[ユーザー指定画像](https://fujisan.ne.jp/wp/wp-content/uploads/2026/02/251120_0317-scaled.jpg)
+- サイズ：1920 × 1280
 
 ### 写真 2
 
-- ファイル：`/images/spots/p07.webp`
-- 写真：河口湖もみじ回廊の紅葉まつり。2018年11月撮影。開催期間・点灯時間は公式案内でご確認ください。
-- 出典・作者：[江戸村のとくぞう](https://commons.wikimedia.org/wiki/File:Momiji_matsuri_2018a.jpg)
-- 利用条件表記：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
-- サイズ：641 × 960
+- ファイル：`/images/spots/p07-05.webp`
+- 写真：紅葉に囲まれた河口湖と富士山。
+- 出典・作者：[Achieve English Camp（ユーザー指定画像）](https://achieve-english-camp.jp/wp-content/uploads/2025/10/-e1761789098839.png)
+- 利用条件表記：[ユーザー指定画像](https://achieve-english-camp.jp/wp-content/uploads/2025/10/-e1761789098839.png)
+- サイズ：1920 × 1274
 
 ### 写真 3
 
-- ファイル：`/images/spots/p07-03.webp`
-- 写真：もみじ回廊周辺、河口湖北岸の通りに色づくもみじ。
-- 出典・作者：[Fuji,CanGo（富士観光開発）](https://www.fuji-net.co.jp/report/cat-tourism-event/1112/)
-- 利用条件表記：[出典サイト掲載写真](https://www.fuji-net.co.jp/report/cat-tourism-event/1112/)
-- サイズ：1000 × 667
+- ファイル：`/images/spots/p07-06.webp`
+- 写真：昼の河口湖もみじ回廊と落ち葉。
+- 出典・作者：[富士河口湖町観光連盟（ユーザー指定画像）](https://fujisan.ne.jp/wp/wp-content/uploads/2026/02/251120_0197-scaled.jpg)
+- 利用条件表記：[ユーザー指定画像](https://fujisan.ne.jp/wp/wp-content/uploads/2026/02/251120_0197-scaled.jpg)
+- サイズ：1920 × 1280
 
 ## P08 昇仙峡
 
@@ -242,61 +242,53 @@
 
 ### 写真 1
 
-- ファイル：`/images/spots/p10-03.webp`
-- 写真：桟橋のそばで色づく、湖畔のもみじ。
-- 出典・作者：[Emi CAMP](https://www.emicamp.com/2019-11-18-161522/)
-- 利用条件表記：[出典サイト掲載写真](https://www.emicamp.com/2019-11-18-161522/)
+- ファイル：`/images/spots/p10-05.webp`
+- 写真：四尾連湖の紅葉（ユーザー指定写真1）。
+- 出典・作者：[jeepe（ユーザー指定画像）](https://cdn.jeepe.jp/uploads/public_image/image/7494/normal_447a0d35-cd89-4e81-b44e-7d8e287d9793.jpg)
+- 利用条件表記：[ユーザー指定画像](https://cdn.jeepe.jp/uploads/public_image/image/7494/normal_447a0d35-cd89-4e81-b44e-7d8e287d9793.jpg)
 - サイズ：1200 × 800
 
 ### 写真 2
 
-- ファイル：`/images/spots/p10-01.webp`
-- 写真：湖畔の紅葉が、静かな水面に映り込みます。
-- 出典・作者：[市川三郷町／ウォーカープラス](https://koyo.walkerplus.com/detail/ar0419e393637/image3.html)
-- 利用条件表記：[出典サイト掲載写真](https://koyo.walkerplus.com/detail/ar0419e393637/image3.html)
-- サイズ：800 × 534
+- ファイル：`/images/spots/p10-06.webp`
+- 写真：四尾連湖の紅葉（ユーザー指定写真2）。
+- 出典・作者：[X掲載画像（ユーザー指定画像）](https://pbs.twimg.com/media/Fgs5dbrUUAct-Vp?format=webp&name=large)
+- 利用条件表記：[ユーザー指定画像](https://pbs.twimg.com/media/Fgs5dbrUUAct-Vp?format=webp&name=large)
+- サイズ：1440 × 1080
 
 ### 写真 3
 
-- ファイル：`/images/spots/p10-02.webp`
-- 写真：湖を縁取る赤いもみじと、水上の小さな舟。
-- 出典・作者：[市川三郷町／ウォーカープラス](https://koyo.walkerplus.com/detail/ar0419e393637/image1.html)
-- 利用条件表記：[出典サイト掲載写真](https://koyo.walkerplus.com/detail/ar0419e393637/image1.html)
-- サイズ：800 × 566
-
-### 写真 4
-
-- ファイル：`/images/spots/p10-04.webp`
-- 写真：朝の湖面に映り込む、色づいた斜面。
-- 出典・作者：[Emi CAMP](https://www.emicamp.com/2019-11-18-161522/)
-- 利用条件表記：[出典サイト掲載写真](https://www.emicamp.com/2019-11-18-161522/)
-- サイズ：1200 × 800
+- ファイル：`/images/spots/p10-07.webp`
+- 写真：四尾連湖の紅葉（ユーザー指定写真3）。
+- 出典・作者：[neettozanponkotsu／ライブドアブログ（ユーザー指定画像）](https://livedoor.blogimg.jp/neettozanponkotsu/imgs/a/f/afdb98f3.jpg)
+- 利用条件表記：[ユーザー指定画像](https://livedoor.blogimg.jp/neettozanponkotsu/imgs/a/f/afdb98f3.jpg)
+- サイズ：1800 × 1200
 
 ## P11 評議原
 
 ### 写真 1
 
-- ファイル：`/images/spots/p11-01.webp`
-- 写真：評議原のモミジ林。頭上に重なる赤と橙の葉。
-- 出典・作者：[相模原町田経済新聞](https://machida.keizai.biz/headline/2739/)
-- 利用条件表記：[出典サイト掲載写真](https://machida.keizai.biz/headline/2739/)
+- ファイル：`/images/spots/p11-04.webp`
+- 写真：評議原の紅葉（ユーザー指定写真1）。
+- 出典・作者：[町田経済新聞（ユーザー指定画像）](https://images.keizai.biz/machida_keizai/headline/1543719290_photo.jpg)
+- 利用条件表記：[ユーザー指定画像](https://images.keizai.biz/machida_keizai/headline/1543719290_photo.jpg)
 - サイズ：900 × 1200
 
 ### 写真 2
 
-- ファイル：`/images/spots/p11-02.webp`
-- 写真：評議原の石碑を囲むもみじと、落ち葉の広場。
-- 出典・作者：[甲斐敏郎／相模原市 市民カメラマン](https://www.city.sagamihara.kanagawa.jp/kankou/1026674/camera/kisetsu/1011134.html)
-- 利用条件表記：[出典サイト掲載写真](https://www.city.sagamihara.kanagawa.jp/kankou/1026674/camera/kisetsu/1011134.html)
-- サイズ：690 × 417
+- ファイル：`/images/spots/p11-05.webp`
+- 写真：評議原の紅葉（ユーザー指定写真2）。
+- 出典・作者：[YAMAP掲載画像（ユーザー指定画像）](https://cdn.yamap.co.jp/imgproxy/public/9jR-4Am2Da_wE0H5WWjrmFTGyrKfwqYvjcGFXGU0CAM/rs:fit:1622:1080/q:50/aHR0cHM6Ly9zMy1h/cC1ub3J0aGVhc3Qt/MS5hbWF6b25hd3Mu/Y29tL2ltYWdlMi55/YW1hcC5jby5qcC9w/cm9kdWN0aW9uLzkz/YjVmNjQzLWZhZGUt/NGVjMC1hYzg4LTBi/OWE2ZDJjNDU3ZA)
+- 利用条件表記：[ユーザー指定画像](https://cdn.yamap.co.jp/imgproxy/public/9jR-4Am2Da_wE0H5WWjrmFTGyrKfwqYvjcGFXGU0CAM/rs:fit:1622:1080/q:50/aHR0cHM6Ly9zMy1h/cC1ub3J0aGVhc3Qt/MS5hbWF6b25hd3Mu/Y29tL2ltYWdlMi55/YW1hcC5jby5qcC9w/cm9kdWN0aW9uLzkz/YjVmNjQzLWZhZGUt/NGVjMC1hYzg4LTBi/OWE2ZDJjNDU3ZA)
+- サイズ：1622 × 1079
 
 ### 写真 3
 
-- ファイル：`/images/spots/p11-03.webp`
-- 写真：木漏れ日に透ける葉と、林の中の散策路。
-- 出典・作者：[内藤賀三／相模原市 市民カメラマン](https://www.city.sagamihara.kanagawa.jp/kankou/1026674/camera/kisetsu/1011134.html)
-- 利用条件表記：[出典サイト掲載写真](https://www.city.sagamihara.kanagawa.jp/kankou/1026674/camera/kisetsu/1011134.html)
-- サイズ：690 × 495
+- ファイル：`/images/spots/p11-06.webp`
+- 写真：評議原の紅葉（ユーザー指定写真3）。
+- 出典・作者：[wotcool.com（ユーザー指定画像）](https://wotcool.com/wp-content/uploads/2019/07/41850748-1024x768.jpeg)
+- 利用条件表記：[ユーザー指定画像](https://wotcool.com/wp-content/uploads/2019/07/41850748-1024x768.jpeg)
+- サイズ：1024 × 768
 
 ## P12 豆焼橋
 
@@ -328,45 +320,45 @@
 
 ### 写真 1
 
-- ファイル：`/images/spots/p13-01.webp`
-- 写真：大血川渓谷。渓流を包む秋のもみじ。
-- 出典・作者：[Web Guide 秩父](https://www.chichibu.co.jp/shizen/紅葉情報「大血川渓谷」/)
-- 利用条件表記：[出典サイト掲載写真](https://www.chichibu.co.jp/shizen/紅葉情報「大血川渓谷」/)
-- サイズ：1920 × 1280
+- ファイル：`/images/spots/p13-03.webp`
+- 写真：大血川の紅葉（ユーザー指定写真1）。
+- 出典・作者：[フォトさいたま（ユーザー指定画像）](https://www.photo-saitama.jp/wp/wp-content/uploads/2019/12/20191121-01.jpg)
+- 利用条件表記：[ユーザー指定画像](https://www.photo-saitama.jp/wp/wp-content/uploads/2019/12/20191121-01.jpg)
+- サイズ：1800 × 1200
 
 ### 写真 2
 
-- ファイル：`/images/spots/p13-02.webp`
-- 写真：大血川沿いから眺める、色づいた山々。
-- 出典・作者：[秩父市（秩父観光なび）](https://navi.city.chichibu.lg.jp/p_flower/1550/#oochigawa)
-- 利用条件表記：[出典サイト掲載写真](https://navi.city.chichibu.lg.jp/p_flower/1550/#oochigawa)
-- サイズ：1024 × 683
+- ファイル：`/images/spots/p13-04.webp`
+- 写真：大血川の紅葉（ユーザー指定写真2）。
+- 出典・作者：[フォトさいたま（ユーザー指定画像）](https://www.photo-saitama.jp/wp/wp-content/uploads/2019/12/20191121-07.jpg)
+- 利用条件表記：[ユーザー指定画像](https://www.photo-saitama.jp/wp/wp-content/uploads/2019/12/20191121-07.jpg)
+- サイズ：1800 × 1200
+
+### 写真 3
+
+- ファイル：`/images/spots/p13-05.webp`
+- 写真：大血川の紅葉（ユーザー指定写真3）。
+- 出典・作者：[Instagram掲載画像（ユーザー指定画像）](https://www.instagram.com/p/DRS0wxRkkjh/?img_index=1)
+- 利用条件表記：[ユーザー指定画像](https://www.instagram.com/p/DRS0wxRkkjh/?img_index=1)
+- サイズ：1440 × 1920
 
 ## P14 奥多摩周遊道路
 
 ### 写真 1
 
-- ファイル：`/images/spots/p14-01.webp`
-- 写真：奥多摩周遊道路。紅葉の間を抜けるカーブ。
-- 出典・作者：[東京都建設局](https://www.kensetsu.metro.tokyo.lg.jp/jimusho/nishiken/okutama-hp/okutama-hp-sizen-top)
-- 利用条件表記：[出典サイト掲載写真](https://www.kensetsu.metro.tokyo.lg.jp/jimusho/nishiken/okutama-hp/okutama-hp-sizen-top)
+- ファイル：`/images/spots/p14-04.webp`
+- 写真：奥多摩周遊道路の紅葉（ユーザー指定写真1）。
+- 出典・作者：[東京都建設局（ユーザー指定画像）](https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000041714)
+- 利用条件表記：[ユーザー指定画像](https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000041714)
 - サイズ：1920 × 1440
 
 ### 写真 2
 
-- ファイル：`/images/spots/p14-02.webp`
-- 写真：道路沿いに広がる赤や橙のもみじ。
-- 出典・作者：[旅案内 たびあん](https://www.tabiinfo.net/spot/detail?id=63705)
-- 利用条件表記：[出典サイト掲載写真](https://www.tabiinfo.net/spot/detail?id=63705)
-- サイズ：1400 × 933
-
-### 写真 3
-
-- ファイル：`/images/spots/p14-03.webp`
-- 写真：斜面の紅葉を見上げる秋の道路風景。
-- 出典・作者：[旅案内 たびあん](https://www.tabiinfo.net/spot/detail?id=63705)
-- 利用条件表記：[出典サイト掲載写真](https://www.tabiinfo.net/spot/detail?id=63705)
-- サイズ：1400 × 933
+- ファイル：`/images/spots/p14-05.webp`
+- 写真：奥多摩周遊道路の紅葉（ユーザー指定写真2）。
+- 出典・作者：[グーバイク掲載画像（ユーザー指定画像）](https://motopicture.goobike.com/spotbike/614531/CNSO6EYapiOUAJFI6cc84uP6BKZIXPIRtrSKhknL.jpeg)
+- 利用条件表記：[ユーザー指定画像](https://motopicture.goobike.com/spotbike/614531/CNSO6EYapiOUAJFI6cc84uP6BKZIXPIRtrSKhknL.jpeg)
+- サイズ：1200 × 800
 
 ## P15 国営昭和記念公園
 
@@ -432,27 +424,35 @@
 
 ### 写真 1
 
-- ファイル：`/images/spots/p17-01.webp`
-- 写真：長瀞岩畳から望む対岸の紅葉。
-- 出典・作者：[Guilhem Vellut from Annecy, France](https://commons.wikimedia.org/wiki/File:Autumn_colors_@_Nagatoro_Iwadatami_Rocks_@_Chichibu_(11043419184).jpg)
-- 利用条件表記：[CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
-- サイズ：960 × 720
+- ファイル：`/images/spots/p17-04.webp`
+- 写真：長瀞岩畳の紅葉（ユーザー指定写真1）。
+- 出典・作者：[秩父観光なび（ユーザー指定画像）](https://www.chichibu.co.jp/wp-content/uploads/2025/10/c90ccf578827cea95b428f4a0d2d6b2e.jpg)
+- 利用条件表記：[ユーザー指定画像](https://www.chichibu.co.jp/wp-content/uploads/2025/10/c90ccf578827cea95b428f4a0d2d6b2e.jpg)
+- サイズ：1920 × 1280
 
 ### 写真 2
 
-- ファイル：`/images/spots/p17-02.webp`
-- 写真：岩畳から眺める秋の山肌。
-- 出典・作者：[オマツリジャパン](https://omatsurijapan.com/blog/nagatoromachi_koyomatsuri/)
-- 利用条件表記：[出典サイト掲載写真](https://omatsurijapan.com/blog/nagatoromachi_koyomatsuri/)
-- サイズ：1920 × 1280
+- ファイル：`/images/spots/p17-05.webp`
+- 写真：長瀞岩畳の紅葉（ユーザー指定写真2）。
+- 出典・作者：[フォトさいたま（ユーザー指定画像）](https://www.photo-saitama.jp/wp/wp-content/uploads/2022/12/20221116-01.jpg)
+- 利用条件表記：[ユーザー指定画像](https://www.photo-saitama.jp/wp/wp-content/uploads/2022/12/20221116-01.jpg)
+- サイズ：1800 × 1200
 
 ### 写真 3
 
-- ファイル：`/images/spots/p17-03.webp`
-- 写真：荒川と長瀞の秋景色を俯瞰した一枚。
-- 出典・作者：[長瀞町観光協会](https://www.nagatoro.gr.jp/kouyo2026/)
-- 利用条件表記：[出典サイト掲載写真](https://www.nagatoro.gr.jp/kouyo2026/)
-- サイズ：1280 × 720
+- ファイル：`/images/spots/p17-06.webp`
+- 写真：長瀞岩畳の紅葉（ユーザー指定写真3）。
+- 出典・作者：[フォトさいたま（ユーザー指定画像）](https://www.photo-saitama.jp/wp/wp-content/uploads/2022/12/20221116-04.jpg)
+- 利用条件表記：[ユーザー指定画像](https://www.photo-saitama.jp/wp/wp-content/uploads/2022/12/20221116-04.jpg)
+- サイズ：1800 × 1200
+
+### 写真 4
+
+- ファイル：`/images/spots/p17-07.webp`
+- 写真：長瀞岩畳の紅葉（ユーザー指定写真4）。
+- 出典・作者：[aumo（ユーザー指定画像）](https://image.aumo.jp/media/uploads/photo/upload_photo/data/1008222/b6f6ebeb-316c-43a4-8575-aaaa2cf10652.jpeg?width=1224)
+- 利用条件表記：[ユーザー指定画像](https://image.aumo.jp/media/uploads/photo/upload_photo/data/1008222/b6f6ebeb-316c-43a4-8575-aaaa2cf10652.jpeg?width=1224)
+- サイズ：1224 × 765
 
 ## P18 城峯公園
 
@@ -484,35 +484,35 @@
 
 ### 写真 1
 
-- ファイル：`/images/spots/p19-02.webp`
-- 写真：石舟橋を囲む秋の山々。
-- 出典・作者：[イマタマ](https://imatama.jp/contents/mini_special/akigawakeikoku/)
-- 利用条件表記：[出典サイト掲載写真](https://imatama.jp/contents/mini_special/akigawakeikoku/)
-- サイズ：1536 × 1152
+- ファイル：`/images/spots/p19-05.webp`
+- 写真：秋川渓谷の紅葉（ユーザー指定写真1）。
+- 出典・作者：[あきる野市（ユーザー指定画像）](https://www.city.akiruno.tokyo.jp/kanko/cmsfiles/contents/0000016/16048/Autumn_10.jpg)
+- 利用条件表記：[ユーザー指定画像](https://www.city.akiruno.tokyo.jp/kanko/cmsfiles/contents/0000016/16048/Autumn_10.jpg)
+- サイズ：1368 × 912
 
 ### 写真 2
 
-- ファイル：`/images/spots/p19-01.webp`
-- 写真：秋川渓谷の石舟橋周辺の紅葉。
-- 出典・作者：[Hiroaki Kaneko](https://commons.wikimedia.org/wiki/File:Akigawa_River_in_the_autumn.jpg)
-- 利用条件表記：[CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0)
-- サイズ：960 × 720
+- ファイル：`/images/spots/p19-06.webp`
+- 写真：秋川渓谷の紅葉（ユーザー指定写真2）。
+- 出典・作者：[イマタマ（ユーザー指定画像）](https://imatama.jp/contents/mini_special/wp-content/uploads/2021/10/akigawa-keikoku_00main-1280x960.jpg)
+- 利用条件表記：[ユーザー指定画像](https://imatama.jp/contents/mini_special/wp-content/uploads/2021/10/akigawa-keikoku_00main-1280x960.jpg)
+- サイズ：1280 × 960
 
 ### 写真 3
 
-- ファイル：`/images/spots/p19-03.webp`
-- 写真：秋川沿いの落葉樹。
-- 出典・作者：[イマタマ](https://imatama.jp/contents/mini_special/akigawakeikoku/)
-- 利用条件表記：[出典サイト掲載写真](https://imatama.jp/contents/mini_special/akigawakeikoku/)
-- サイズ：1000 × 667
+- ファイル：`/images/spots/p19-07.webp`
+- 写真：秋川渓谷の紅葉（ユーザー指定写真3）。
+- 出典・作者：[RETRIP（ユーザー指定画像）](https://static.retrip.jp/article/93600/images/936006fa46bfd-d067-4efd-8d34-83cf965528f3_l.jpg)
+- 利用条件表記：[ユーザー指定画像](https://static.retrip.jp/article/93600/images/936006fa46bfd-d067-4efd-8d34-83cf965528f3_l.jpg)
+- サイズ：1280 × 852
 
 ### 写真 4
 
-- ファイル：`/images/spots/p19-04.webp`
-- 写真：石舟橋周辺を彩る紅葉。
-- 出典・作者：[イマタマ](https://imatama.jp/contents/mini_special/akigawakeikoku/)
-- 利用条件表記：[出典サイト掲載写真](https://imatama.jp/contents/mini_special/akigawakeikoku/)
-- サイズ：1000 × 667
+- ファイル：`/images/spots/p19-08.webp`
+- 写真：秋川渓谷の紅葉（ユーザー指定写真4）。
+- 出典・作者：[PR TIMES掲載画像（ユーザー指定画像）](https://prcdn.freetls.fastly.net/release_image/77805/11/77805-11-5edadb78586b9b5b8f27864be7018728-3900x2925.jpg?format=jpeg&auto=webp&quality=85%2C65&width=1950&height=1350&fit=bounds)
+- 利用条件表記：[ユーザー指定画像](https://prcdn.freetls.fastly.net/release_image/77805/11/77805-11-5edadb78586b9b5b8f27864be7018728-3900x2925.jpg?format=jpeg&auto=webp&quality=85%2C65&width=1950&height=1350&fit=bounds)
+- サイズ：1800 × 1350
 
 ## P20 新倉山浅間公園
 
@@ -539,3 +539,146 @@
 - 出典・作者：[Kyoko1903／Lemon8](https://www.lemon8-app.com/@kyoko1903_/7012469940913455622?region=jp)
 - 利用条件表記：[出典サイト掲載写真](https://www.lemon8-app.com/@kyoko1903_/7012469940913455622?region=jp)
 - サイズ：1080 × 1351
+
+## P21 中津峡
+
+### 写真 1
+
+- ファイル：`/images/spots/p21-01.webp`
+- 写真：持桶女郎もみじと木漏れ日。
+- 出典・作者：[フォトさいたま](https://www.photo-saitama.jp/seasons/november/20201110.html)
+- 元画像：[画像リンク](https://www.photo-saitama.jp/wp/wp-content/uploads/2020/12/20201110-01.jpg)
+- 利用条件表記：[出典サイト掲載写真](https://www.photo-saitama.jp/seasons/november/20201110.html)
+- サイズ：1800 × 1200
+
+### 写真 2
+
+- ファイル：`/images/spots/p21-02.webp`
+- 写真：中津峡の岩壁と色づく山々。
+- 出典・作者：[フォトさいたま](https://www.photo-saitama.jp/seasons/november/20201110.html)
+- 元画像：[画像リンク](https://www.photo-saitama.jp/wp/wp-content/uploads/2020/12/20201110-03.jpg)
+- 利用条件表記：[出典サイト掲載写真](https://www.photo-saitama.jp/seasons/november/20201110.html)
+- サイズ：1800 × 1200
+
+### 写真 3
+
+- ファイル：`/images/spots/p21-03.webp`
+- 写真：中津川の渓流に沿って色づく紅葉。
+- 出典・作者：[フォトさいたま](https://www.photo-saitama.jp/seasons/november/20201110.html)
+- 元画像：[画像リンク](https://www.photo-saitama.jp/wp/wp-content/uploads/2020/12/20201110-07.jpg)
+- 利用条件表記：[出典サイト掲載写真](https://www.photo-saitama.jp/seasons/november/20201110.html)
+- サイズ：1800 × 1200
+
+
+## P22 鳩ノ巣渓谷
+
+### 写真 1
+
+- ファイル：`/images/spots/p22-01.webp`
+- 写真：鳩ノ巣渓谷を囲む紅葉と多摩川。
+- 出典・作者：[COOL JAPAN VIDEOS](https://cooljapan-videos.com/jp/articles/pb5etajr)
+- 元画像：[画像リンク](https://img.cooljapan-videos.com/files/articles/pb5etajr/thumbnail/2110574d92cda44951869b957b6050d87f7b3f69.jpg)
+- 利用条件表記：[出典サイト掲載写真](https://cooljapan-videos.com/jp/articles/pb5etajr)
+- サイズ：1920 × 1280
+
+### 写真 2
+
+- ファイル：`/images/spots/p22-02.webp`
+- 写真：紅葉に包まれた鳩ノ巣渓谷の岩場と流れ。
+- 出典・作者：[COOL JAPAN VIDEOS](https://cooljapan-videos.com/jp/articles/pb5etajr)
+- 元画像：[画像リンク](https://img.cooljapan-videos.com/files/article_images/09271409e478b5a6fe2cdc297d76ac15e852856c.jpg)
+- 利用条件表記：[出典サイト掲載写真](https://cooljapan-videos.com/jp/articles/pb5etajr)
+- サイズ：1920 × 1272
+
+### 写真 3
+
+- ファイル：`/images/spots/p22-03.webp`
+- 写真：鳩ノ巣小橋と渓谷の紅葉。
+- 出典・作者：[洛基小聿媽](https://www.cclo.tw/2017/12/blog-post_12.html)
+- 元画像：[画像リンク](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0a7sguD9qoUDm_eNagK_A_UHHixfnguANRxD92lVaqcTYvOZ6D5xLRT8GhW_j3hnkLxs8qEyzHyVdmfdkqvDgUHaQuBEwThlM9-bjY39cribDDMZntR9Yn0QkA3_5j8Uk_veqPXm95s5Y/s1600/IMG_3734.JPG)
+- 利用条件表記：[出典サイト掲載写真](https://www.cclo.tw/2017/12/blog-post_12.html)
+- サイズ：1600 × 1067
+
+
+## P23 名勝・猿橋
+
+### 写真 1
+
+- ファイル：`/images/spots/p23-01.webp`
+- 写真：モミジに彩られた猿橋の全景。
+- 出典・作者：[南アルプスのしずくⅡ](https://515minami-alps2.blogspot.com/2013/11/2013.html)
+- 元画像：[画像リンク](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgK3b5Q2thDIyPn6ZptNV689Qby07XqV73e_N0VcydwJB-Ro8DxN8tUQDTfGgXAV63nZIdrLZR3gLQFD1W0UIJnXdK3z8FVrLIkJdUFNIYkXRyNPNoifwYPfUfgP-iqoEyI1YWxifFFb2-V/s1600/DSC07879.JPG)
+- 利用条件表記：[出典サイト掲載写真](https://515minami-alps2.blogspot.com/2013/11/2013.html)
+- サイズ：1600 × 1200
+
+### 写真 2
+
+- ファイル：`/images/spots/p23-02.webp`
+- 写真：猿橋の入口と紅葉。
+- 出典・作者：[南アルプスのしずくⅡ](https://515minami-alps2.blogspot.com/2013/11/2013.html)
+- 元画像：[画像リンク](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdCZOQKwooJcHFGhr8ygHRlGJ38nY0i1PZVEpK9_JwLO56O3eaTwp2TTrnBPfZAfjktsH_umZ4CpphRt8FouAXMIg3U0p4_xVl70hXO2Yg36HUUkePiYt7kk-qEpcpUpNiVJDyRsd5R9dI/s1600/DSC07880.JPG)
+- 利用条件表記：[出典サイト掲載写真](https://515minami-alps2.blogspot.com/2013/11/2013.html)
+- サイズ：1200 × 1600
+
+### 写真 3
+
+- ファイル：`/images/spots/p23-03.webp`
+- 写真：猿橋の木の欄干と頭上を覆う紅葉。
+- 出典・作者：[松雲つれづれ日記](https://shoun-nikki.seesaa.net/article/501596506.html)
+- 元画像：[画像リンク](https://shoun-nikki.up.seesaa.net/image/PB267251.JPG)
+- 利用条件表記：[出典サイト掲載写真](https://shoun-nikki.seesaa.net/article/501596506.html)
+- サイズ：1920 × 1440
+
+
+## P24 南伊奈ヶ湖
+
+### 写真 1
+
+- ファイル：`/images/spots/p24-04.webp`
+- 写真：南伊奈ヶ湖の紅葉。
+- 出典・作者：[@lll_photo_ / Instagram](https://www.instagram.com/p/DCROiehviG2/)
+- 利用条件表記：ユーザー指定画像
+- サイズ：1440 × 1800
+
+### 写真 2
+
+- ファイル：`/images/spots/p24-05.webp`
+- 写真：南伊奈ヶ湖の紅葉。
+- 出典・作者：[かたすみ日記](https://katasumidiary.com/wp-content/uploads/2022/11/20221102inagako003.jpg)
+- 利用条件表記：ユーザー指定画像
+- サイズ：1920 × 1440
+
+### 写真 3
+
+- ファイル：`/images/spots/p24-06.webp`
+- 写真：南伊奈ヶ湖の紅葉。
+- 出典・作者：[南アルプス市](https://www.city.minami-alps.yamanashi.jp/fs/1/4/7/1/0/5/_/13-1_____.jpg)
+- 利用条件表記：ユーザー指定画像
+- サイズ：1920 × 1440
+
+
+## P25 大雄山最乗寺
+
+### 写真 1
+
+- ファイル：`/images/spots/p25-04.webp`
+- 写真：大雄山最乗寺の紅葉。
+- 出典・作者：[marty58jp / ライブドアブログ](https://livedoor.blogimg.jp/marty58jp/imgs/e/8/e8cfa34c.jpg)
+- 利用条件表記：ユーザー指定画像
+- サイズ：1024 × 768
+
+### 写真 2
+
+- ファイル：`/images/spots/p25-05.webp`
+- 写真：大雄山最乗寺の紅葉。
+- 出典・作者：[ウェザーニュース](https://gvs.weathernews.jp/s/koyo/szyimg/2026/24604/1785831105.webp?tm=1793949797)
+- 利用条件表記：ユーザー指定画像
+- サイズ：1920 × 1080
+
+### 写真 3
+
+- ファイル：`/images/spots/p25-06.webp`
+- 写真：大雄山最乗寺の紅葉。
+- 出典・作者：[GOOD LUCK TRIP](https://static.gltjp.com/glt/data/directory/12000/11659/20210718_203806_22d92548_w1920.webp)
+- 利用条件表記：ユーザー指定画像
+- サイズ：1920 × 1296

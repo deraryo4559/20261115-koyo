@@ -18,8 +18,8 @@ describe('browse state recovery', () => {
     expect(restore(state)).toEqual({ ...state, selectedId: null });
   });
   it('never restores the deleted route or deleted locations', () => {
-    expect(restore({ version: 1, route: 'tsukuba-ashikaga', view: 'map', selectedId: 'P21' })).toEqual(initialState);
-    expect(restore({ version: 1, route: 'all', view: 'map', selectedId: 'P22' })).toEqual(initialState);
+    expect(restore({ version: 1, route: 'tsukuba-ashikaga', view: 'map', selectedId: 'P99' })).toEqual(initialState);
+    expect(restore({ version: 1, route: 'all', view: 'map', selectedId: 'P98' })).toEqual(initialState);
   });
   it('clears an out-of-route place without silently changing the requested route', () => {
     expect(restore({ version: 1, route: 'hakone', view: 'map', selectedId: 'P07' })).toEqual({ version: 1, route: 'hakone', view: 'map', selectedId: null });

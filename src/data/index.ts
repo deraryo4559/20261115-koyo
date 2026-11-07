@@ -1,5 +1,6 @@
 import rawSpots from './spots.json';
 import rawPhotos from './photos.json';
+import covers from './covers.json';
 import type { Photo, RouteFilter, Spot } from '../types/spot';
 
 const photos = rawPhotos as Record<string, Photo[]>;
@@ -9,7 +10,7 @@ export const spots: Spot[] = rawSpots.map((spot) => ({
   routeId: spot.routeId as Spot['routeId'],
   coordinateStatus: spot.coordinateStatus as Spot['coordinateStatus'],
   photos: photos[spot.id] ?? [],
-  photo: photos[spot.id]?.[0] ?? null,
+  photo: photos[spot.id]?.find((photo) => photo.src === (covers as Record<string, string>)[spot.id]) ?? photos[spot.id]?.[0] ?? null,
 }));
 
 export const spotById = Object.fromEntries(spots.map((spot) => [spot.id, spot]));

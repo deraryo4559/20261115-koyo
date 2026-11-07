@@ -5,13 +5,32 @@ import { spots, filterSpots } from '../src/data';
 import { routes } from '../src/data/routes';
 
 describe('published spot catalog', () => {
-  it('contains the 20 requested places once, in the three disjoint routes', () => {
-    expect(spots.map((spot) => spot.id)).toEqual(Array.from({ length: 20 }, (_, index) => `P${String(index + 1).padStart(2, '0')}`));
-    expect(new Set(spots.map((spot) => spot.name)).size).toBe(20);
-    expect(routes.map((route) => filterSpots(route.id).length)).toEqual([4, 7, 9]);
+  it('contains the 25 requested places once, in the three disjoint routes', () => {
+    expect(spots.map((spot) => spot.id)).toEqual(Array.from({ length: 25 }, (_, index) => `P${String(index + 1).padStart(2, '0')}`));
+    expect(new Set(spots.map((spot) => spot.name)).size).toBe(25);
+    expect(routes.map((route) => filterSpots(route.id).length)).toEqual([5, 9, 11]);
     for (const route of routes) expect(filterSpots(route.id)).toHaveLength(route.count);
-    expect(filterSpots('all')).toHaveLength(20);
+    expect(filterSpots('all')).toHaveLength(25);
     expect(spots.some((spot) => /筑波山|あしかが|竜神峡/.test(spot.name))).toBe(false);
+  });
+
+  it('adds the five requested places with three high-resolution autumn photos each', () => {
+    const expected = { P21: '中津峡', P22: '鳩ノ巣渓谷', P23: '名勝・猿橋', P24: '南伊奈ヶ湖', P25: '大雄山最乗寺' };
+    for (const [id, name] of Object.entries(expected)) {
+      const spot = spots.find((item) => item.id === id)!;
+      expect(spot.name).toBe(name);
+      expect(spot.photos).toHaveLength(3);
+      for (const photo of spot.photos) {
+        expect(photo.season).toBe('autumn');
+        // The user supplied P25's first replacement at its original 1024px resolution.
+        expect(Math.max(photo.width!, photo.height!)).toBeGreaterThanOrEqual(photo.src === '/images/spots/p25-04.webp' ? 1024 : 1400);
+      }
+    }
+  });
+
+  it('preserves the four explicitly fixed thumbnails', () => {
+    const fixed = { P02: 'p02-04.webp', P13: 'p13-03.webp', P15: 'p15-01.webp', P20: 'p20-01.webp' };
+    for (const [id, file] of Object.entries(fixed)) expect(spots.find((spot) => spot.id === id)?.photo?.src).toBe(`/images/spots/${file}`);
   });
 
   it('uses valid source-backed coordinates and unique individual Google Maps links', () => {
@@ -23,18 +42,25 @@ describe('published spot catalog', () => {
       expect(spot.coordinates[1]).toBeLessThan(140);
       const url = new URL(spot.googleMapsUrl);
       expect(url.hostname).toBe('www.google.com');
-      expect(url.searchParams.get('cid')).toMatch(/^\d+$/);
+      if (url.searchParams.has('cid')) {
+        expect(url.searchParams.get('cid')).toMatch(/^\d+$/);
+      } else {
+        expect(url.pathname).toBe('/maps/search/');
+        expect(url.searchParams.get('api')).toBe('1');
+        expect(url.searchParams.get('query')).toContain(spot.name);
+        expect(url.searchParams.get('query')).toContain(spot.address);
+      }
       expect(spot.sources.length).toBeGreaterThan(0);
       expect(spot.locationNote).not.toBe('');
       links.add(spot.googleMapsUrl);
     }
-    expect(links.size).toBe(20);
+    expect(links.size).toBe(25);
   });
 
   it('gives every spot a distinct photo album and an attributed local autumn cover', () => {
     for (const spot of spots) {
       expect(spot.photos.length).toBeGreaterThanOrEqual(2);
-      expect(spot.photo).toBe(spot.photos[0]);
+      expect(spot.photos).toContain(spot.photo);
       expect(spot.photo?.season).toBe('autumn');
       expect(new Set(spot.photos.map((photo) => photo.src)).size).toBe(spot.photos.length);
       for (const photo of spot.photos) {
