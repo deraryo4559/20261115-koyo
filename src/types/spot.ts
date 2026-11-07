@@ -1,6 +1,6 @@
 export type RouteId = 'hakone' | 'yamanashi' | 'chichibu-tama';
 export type RouteFilter = 'all' | RouteId;
-export type ViewMode = 'scenery' | 'map';
+export type ViewMode = 'map';
 
 export interface Photo {
   src: string;

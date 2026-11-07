@@ -5,10 +5,13 @@ import { spots } from '../src/data';
 const restore = (value: unknown) => restoreBrowseState(JSON.stringify(value), spots);
 
 describe('browse state recovery', () => {
-  it('starts with all places and scenery when storage is unavailable or malformed', () => {
+  it('starts with all places and map when storage is unavailable or malformed', () => {
     expect(restoreBrowseState(null, spots)).toEqual(initialState);
     expect(restoreBrowseState('{broken', spots)).toEqual(initialState);
     expect(restore(null)).toEqual(initialState);
+  });
+  it('migrates the former scenery view while preserving the route', () => {
+    expect(restore({ version: 1, route: 'yamanashi', view: 'scenery', selectedId: null })).toEqual({ version: 1, route: 'yamanashi', view: 'map', selectedId: null });
   });
   it('keeps the selected route, view, and place on return', () => {
     const state = { version: 1, route: 'yamanashi', view: 'map', selectedId: 'P20' };

@@ -14,6 +14,7 @@ export interface SpotMapProps {
   active: boolean;
   filterKey: RouteFilter;
   revealRequest: number;
+  resetRequest: number;
   onSelect: (spotId: string, trigger?: HTMLElement) => void;
 }
 
@@ -33,17 +34,18 @@ function PreviewPhoto({ spot }: { spot: Spot }) {
 }
 
 /** A client-only, persistent Leaflet map. Filtering changes bounds; closing a detail does not. */
-export default function SpotMap({ spots, selectedId, active, filterKey, revealRequest, onSelect }: SpotMapProps) {
+export default function SpotMap({ spots, selectedId, active, filterKey, revealRequest, resetRequest, onSelect }: SpotMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<Leaflet.Map | null>(null);
   const leafletRef = useRef<LeafletModule | null>(null);
-  const clusterRef = useRef<Leaflet.MarkerClusterGroup | null>(null);
+  const markerLayerRef = useRef<Leaflet.LayerGroup | null>(null);
   const markerRefs = useRef(new Map<string, Leaflet.Marker>());
   const selectedRef = useRef(selectedId);
   const selectRef = useRef(onSelect);
   const activeRef = useRef(active);
   const lastRevealedRequestRef = useRef<number | null>(null);
+  const lastResetRequestRef = useRef<number | null>(null);
   const lastFittedFilterRef = useRef<RouteFilter | null>(null);
   const showTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -117,9 +119,7 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
     void (async () => {
       try {
         const importedLeaflet = await import('leaflet');
-        // The cluster plugin augments Leaflet's shared default object, not an ESM namespace copy.
         const leaflet = ('default' in importedLeaflet ? importedLeaflet.default : importedLeaflet) as LeafletModule;
-        await import('leaflet.markercluster');
         if (disposed || !containerRef.current) return;
         leafletRef.current = leaflet;
         map = leaflet.map(containerRef.current, {
@@ -170,34 +170,13 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
         });
         tileLayer.addTo(map);
 
-        const clusters = leaflet.markerClusterGroup({
-          showCoverageOnHover: false,
-          animate: false,
-          animateAddingMarkers: false,
-          maxClusterRadius: 48,
-          spiderfyOnMaxZoom: true,
-          zoomToBoundsOnClick: true,
-          iconCreateFunction: (cluster) => leaflet.divIcon({
-            html: `<span>${cluster.getChildCount()}</span>`,
-            className: 'koyo-cluster',
-            iconSize: [44, 44],
-            iconAnchor: [22, 22],
-          }),
-        });
-        clusterRef.current = clusters;
-        clusters.addTo(map);
-        const labelClusters = () => {
-          containerRef.current?.querySelectorAll<HTMLElement>('.koyo-cluster').forEach((element) => {
-            element.setAttribute('aria-label', `${element.textContent}地点が重なっています。拡大して表示`);
-            element.setAttribute('role', 'button');
-          });
-        };
-        map.on('zoomend moveend layeradd', labelClusters);
+        markerLayerRef.current = leaflet.layerGroup().addTo(map);
         map.on('movestart zoomstart', () => {
           cancelTimers();
           setPreview(null);
         });
         lastFittedFilterRef.current = null;
+        lastResetRequestRef.current = null;
         lastRevealedRequestRef.current = null;
         setReady((value) => value + 1);
       } catch {
@@ -210,7 +189,7 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
       if (loadingTimeout) clearTimeout(loadingTimeout);
       cancelTimers();
       markerRefs.current.clear();
-      clusterRef.current = null;
+      markerLayerRef.current = null;
       map?.remove();
       mapRef.current = null;
       leafletRef.current = null;
@@ -221,20 +200,23 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
   useEffect(() => {
     const map = mapRef.current;
     const leaflet = leafletRef.current;
-    const clusters = clusterRef.current;
-    if (!map || !leaflet || !clusters || !ready) return;
+    const markerLayer = markerLayerRef.current;
+    if (!map || !leaflet || !markerLayer || !ready) return;
     closePreview();
     dismissedPreviewRef.current = null;
-    clusters.clearLayers();
+    markerLayer.clearLayers();
     markerRefs.current.clear();
     const unbind: (() => void)[] = [];
 
     visibleSpots.forEach((spot) => {
+      const route = routeById[spot.routeId];
       const marker = leaflet.marker(spot.coordinates, {
+        title: `${spot.name}（${route.shortLabel}）`,
+        riseOnHover: true,
         keyboard: true,
         autoPanOnFocus: false,
         icon: leaflet.divIcon({
-          html: `<span>${Number(spot.id.replace(/^P/, ''))}</span>`,
+          html: `<span style="--pin-color: ${route.color}"></span>`,
           className: 'koyo-marker',
           iconSize: [44, 44],
           iconAnchor: [22, 22],
@@ -247,7 +229,7 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
         const element = marker.getElement();
         if (!element) return;
         element.dataset.spotId = spot.id;
-        element.setAttribute('aria-label', `${spot.name}の写真と詳細を表示`);
+        element.setAttribute('aria-label', `${route.label}ルート、${spot.name}の写真と詳細を表示`);
         element.setAttribute('aria-pressed', String(selectedRef.current === spot.id));
         element.classList.toggle('is-selected', selectedRef.current === spot.id);
         if (lastElement === element) return;
@@ -284,19 +266,19 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
         scheduleClose();
       });
       marker.on('click', () => chooseSpot(spot, marker.getElement()));
-      clusters.addLayer(marker);
+      markerLayer.addLayer(marker);
     });
     return () => unbind.forEach((remove) => remove());
   }, [ready, visibleSpots, closePreview, cancelTimers, scheduleClose, showPreview, chooseSpot]);
 
-  // Only a new filter resets the view; tab changes and detail dismissal preserve it.
+  // A filter change or explicit reset fits the bounds; detail dismissal preserves the view.
   useEffect(() => {
     const map = mapRef.current;
     const leaflet = leafletRef.current;
     if (!active || !map || !leaflet || !ready || !visibleSpots.length) return;
     const frame = requestAnimationFrame(() => {
       map.invalidateSize({ pan: false });
-      if (lastFittedFilterRef.current === filterKey) return;
+      if (lastFittedFilterRef.current === filterKey && lastResetRequestRef.current === resetRequest) return;
       const reserveDetail = Boolean(selectedRef.current) && window.matchMedia('(min-width: 1024px)').matches;
       map.fitBounds(leaflet.latLngBounds(visibleSpots.map((spot) => spot.coordinates)), {
         paddingTopLeft: [34, 34],
@@ -305,34 +287,33 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
         animate: false,
       });
       lastFittedFilterRef.current = filterKey;
+      lastResetRequestRef.current = resetRequest;
     });
     return () => cancelAnimationFrame(frame);
-  }, [active, filterKey, ready, visibleSpots]);
+  }, [active, filterKey, resetRequest, ready, visibleSpots]);
 
   useEffect(() => {
     const map = mapRef.current;
-    const clusters = clusterRef.current;
+    const markerLayer = markerLayerRef.current;
     markerRefs.current.forEach((marker, id) => {
       marker.getElement()?.classList.toggle('is-selected', id === selectedId);
       marker.getElement()?.setAttribute('aria-pressed', String(id === selectedId));
     });
     if (selectedId) closePreview();
-    if (!map || !clusters || !active || !selectedId || lastRevealedRequestRef.current === revealRequest) return;
+    if (!map || !markerLayer || !active || !selectedId || lastRevealedRequestRef.current === revealRequest) return;
     const marker = markerRefs.current.get(selectedId);
     if (!marker) return;
-    // Reveal markers inside clusters, then keep the selected pin clear of the desktop detail panel.
+    // Keep the selected pin clear of the desktop detail panel.
     const frame = requestAnimationFrame(() => {
       lastRevealedRequestRef.current = revealRequest;
-      clusters.zoomToShowLayer(marker, () => {
-        if (mapRef.current !== map || selectedRef.current !== selectedId || !activeRef.current) return;
-        const reserveDetail = window.matchMedia('(min-width: 1024px)').matches;
-        marker.getElement()?.classList.add('is-selected');
-        marker.getElement()?.setAttribute('aria-pressed', 'true');
-        map.panInside(marker.getLatLng(), {
-          paddingTopLeft: [34, 34],
-          paddingBottomRight: [reserveDetail ? 394 : 34, 34],
-          animate: false,
-        });
+      if (mapRef.current !== map || selectedRef.current !== selectedId || !activeRef.current) return;
+      const reserveDetail = window.matchMedia('(min-width: 1024px)').matches;
+      marker.getElement()?.classList.add('is-selected');
+      marker.getElement()?.setAttribute('aria-pressed', 'true');
+      map.panInside(marker.getLatLng(), {
+        paddingTopLeft: [34, 34],
+        paddingBottomRight: [reserveDetail ? 394 : 34, 34],
+        animate: false,
       });
     });
     return () => cancelAnimationFrame(frame);

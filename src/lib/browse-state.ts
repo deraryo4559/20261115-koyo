@@ -8,7 +8,7 @@ export interface BrowseState {
   selectedId: string | null;
 }
 export const STORAGE_KEY = 'koyo-drive:browse:v1';
-export const initialState: BrowseState = { version: 1, route: 'all', view: 'scenery', selectedId: null };
+export const initialState: BrowseState = { version: 1, route: 'all', view: 'map', selectedId: null };
 
 export function restoreBrowseState(raw: string | null, available: { id: string; routeId: string }[]): BrowseState {
   if (!raw) return { ...initialState };
@@ -18,7 +18,7 @@ export function restoreBrowseState(raw: string | null, available: { id: string; 
     const selected = available.find((spot) => spot.id === saved.selectedId);
     if (saved.selectedId !== null && !selected) return { ...initialState };
     return {
-      version: 1, route: saved.route, view: saved.view,
+      version: 1, route: saved.route, view: 'map',
       selectedId: selected && (saved.route === 'all' || selected.routeId === saved.route) ? selected.id : null,
     };
   } catch {

@@ -14,17 +14,16 @@
 .spot-map .leaflet-control-zoom a { width: 44px; height: 44px; line-height: 44px; border-radius: 0; background: #fffcf4; color: #30251c; }
 .spot-map .leaflet-control-zoom a:hover { background: #f0e8d9; }
 .spot-map .leaflet-control-zoom .leaflet-disabled { background: #e6e3d9; color: #8c897d; }
-.spot-map .koyo-marker, .spot-map .koyo-cluster { display: grid; place-items: center; border: none; background: transparent; }
+.spot-map .koyo-marker { display: grid; place-items: center; border: none; background: transparent; }
 .spot-map .koyo-marker span {
-  display: grid; place-items: center; width: 29px; height: 29px;
-  border-radius: 50%; border: 2px solid #ad321e;
-  background: #fffaf0; color: #912816;
+  display: grid; place-items: center; width: 22px; height: 22px;
+  border-radius: 50%; border: 2px solid var(--pin-color);
+  background: var(--pin-color); color: #fffaf0;
   font-size: 12px; font-weight: 700; line-height: 1;
   box-shadow: 0 1px 3px #33211333;
 }
-.spot-map .koyo-marker.is-selected span { width: 34px; height: 34px; background: #ad321e; color: #fffaf0; border: 3px solid #fffaf0; box-shadow: 0 0 0 1px #ad321e; }
-.spot-map .koyo-marker:focus-visible, .spot-map .koyo-cluster:focus-visible { outline: 3px solid #143e70; outline-offset: 1px; border-radius: 50%; }
-.spot-map .koyo-cluster span { display: grid; place-items: center; width: 36px; height: 36px; background: #f3e5c6; border: 3px solid #ad321e; border-radius: 50%; color: #742515; font-size: 14px; font-weight: 700; box-shadow: 0 0 0 4px #fffaf088; }
+.spot-map .koyo-marker.is-selected span { width: 34px; height: 34px; background: var(--pin-color); color: #fffaf0; border: 3px solid #fffaf0; box-shadow: 0 0 0 2px var(--pin-color); }
+.spot-map .koyo-marker:focus-visible { outline: 3px solid #143e70; outline-offset: 1px; border-radius: 50%; }
 .spot-map .spot-map-loading { position: absolute; z-index: 800; right: 14px; top: 14px; margin: 0; padding: 10px 13px; background: #fffcf4; color: #55483b; font-size: 13px; pointer-events: none; }
 .spot-map .spot-map-error { position: absolute; z-index: 800; left: 62px; right: 14px; top: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; padding: 13px 16px; background: #fffcf4; color: #30251c; box-shadow: 0 2px 12px #3321131a; }
 .spot-map .spot-map-error p { margin: 0; font-size: 14px; line-height: 1.6; }
