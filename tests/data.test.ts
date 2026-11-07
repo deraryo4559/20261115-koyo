@@ -8,7 +8,7 @@ describe('published spot catalog', () => {
   it('contains the 25 requested places once, in the three disjoint routes', () => {
     expect(spots.map((spot) => spot.id)).toEqual(Array.from({ length: 25 }, (_, index) => `P${String(index + 1).padStart(2, '0')}`));
     expect(new Set(spots.map((spot) => spot.name)).size).toBe(25);
-    expect(routes.map((route) => filterSpots(route.id).length)).toEqual([5, 9, 11]);
+    expect(routes.map((route) => filterSpots(route.id).length)).toEqual([5, 8, 12]);
     for (const route of routes) expect(filterSpots(route.id)).toHaveLength(route.count);
     expect(filterSpots('all')).toHaveLength(25);
     expect(spots.some((spot) => /筑波山|あしかが|竜神峡/.test(spot.name))).toBe(false);
