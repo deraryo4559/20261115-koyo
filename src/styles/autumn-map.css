@@ -1,0 +1,69 @@
+/* The map and index share an autumn travel-atlas palette. Albums stay independent. */
+.autumn-home {
+  color-scheme: light;
+  --paper: #f5efe3;
+  --ink: #30291f;
+  --muted: #756856;
+  --accent: #883d27;
+  --line: #bb9a7d;
+  --album: #e9dfcd;
+  --serif: 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+}
+.autumn-home .content-width, .autumn-home .site-header { width: min(100% - 64px, 1400px); }
+.autumn-home .header-top { padding: 32px 0 20px; align-items: center; gap: 30px; }
+.autumn-home .header-top::after { content: ''; height: 1px; background: var(--accent); flex: 1; }
+.autumn-home .header-top h1 { font-family: var(--serif); color: var(--accent); font-size: clamp(28px, 3.5vw, 48px); font-weight: 600; letter-spacing: .065em; line-height: 1.4; }
+.autumn-home .route-filter { gap: 20px; padding: 0 0 22px; }
+.autumn-home .route-filter button { position: relative; justify-content: center; min-height: 50px; padding: 10px 30px; font-family: var(--serif); font-size: 18px; border-color: var(--accent); font-weight: 600; }
+.autumn-home .route-filter button:hover { background: #e9dcc9; }
+.autumn-home .route-filter button[aria-pressed=true] { background: var(--accent); color: var(--paper); }
+.autumn-home .route-count { position: absolute; right: 10px; font-family: sans-serif; font-size: 10px; }
+.autumn-home .route-name-full { display: none; }
+.autumn-home .route-name-short { display: inline; }
+.autumn-home .map-section { display: flex; flex-direction: column; padding-top: 0; }
+.autumn-home .map-caption { display: none; }
+.autumn-home .map-layout { order: 0; border: 1px solid #cbbda5; }
+.autumn-home .map-legend { order: 1; padding: 14px 0; gap: 12px 26px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.autumn-home .route-key { width: 13px; height: 13px; border: 1px solid #fff9ed; }
+.autumn-home .map-index { order: 2; padding-top: 25px; padding-bottom: 36px; }
+.autumn-home .map-index h2 { display: flex; align-items: center; gap: 20px; font-family: var(--serif); font-size: 32px; color: var(--accent); font-weight: 600; letter-spacing: .08em; margin-bottom: 22px; }
+.autumn-home .map-index h2::after { content: ''; height: 1px; background: var(--accent); flex: 1; }
+.autumn-home .map-index h2>span { padding: 0; font-family: sans-serif; font-size: 12px; letter-spacing: 0; }
+.autumn-home .spot-gallery--compact { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px 20px; align-items: start; }
+.autumn-home .gallery-item:nth-child(5n + 1) { grid-column: span 2; }
+.autumn-home .spot-gallery--compact .photo-frame { aspect-ratio: 4/3; }
+.autumn-home .gallery-item:nth-child(5n + 1) .photo-frame { aspect-ratio: 2/1; }
+.autumn-home .gallery-name { font-family: var(--serif); font-weight: 600; font-size: 19px; letter-spacing: .025em; margin-top: 9px; }
+.autumn-home .spot-map, .autumn-home .map-loading { height: clamp(420px, 42vw, 580px); }
+/* Tint tiles only: controls, attribution, photos and route pins retain their colors. */
+.autumn-home .leaflet-tile-pane { filter: saturate(.65) sepia(.16); }
+.autumn-home .spot-map .spot-map-preview { padding: 7px; border: 1px solid #b6a18b; box-shadow: 0 3px 12px #49332222; }
+.autumn-home .spot-map-preview h3, .autumn-home .detail-intro h2 { font-family: var(--serif); }
+.autumn-home .spot-detail { border-color: var(--line); box-shadow: 0 4px 16px #49332222; }
+.autumn-home .site-footer { border-top: 1px solid var(--line); }
+@media (max-width: 767px) {
+  .autumn-home .content-width, .autumn-home .site-header { width: calc(100% - 32px); }
+  .autumn-home .header-top { padding: 22px 0 20px; gap: 14px; }
+  .autumn-home .header-top h1 { font-size: clamp(23px, 6.7vw, 32px); letter-spacing: .015em; }
+  .autumn-home .route-filter { gap: 9px 12px; padding-bottom: 18px; }
+  .autumn-home .route-filter button { font-size: 15px; min-height: 46px; padding: 9px 22px 9px 12px; }
+  .autumn-home .route-count { right: 7px; font-size: 9px; }
+  .autumn-home .spot-map, .autumn-home .map-loading { height: 390px; height: clamp(320px, 49svh, 440px); }
+  .autumn-home .map-legend { gap: 8px 12px; font-size: 11px; padding: 12px 0; }
+  .autumn-home .map-legend li { gap: 5px; }
+  .autumn-home .route-key { width: 12px; height: 12px; }
+  .autumn-home .map-index { padding-top: 22px; }
+  .autumn-home .map-index h2 { font-size: 24px; gap: 12px; margin-bottom: 18px; }
+  .autumn-home .spot-gallery--compact { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; }
+  .autumn-home .gallery-item:nth-child(5n + 1) { grid-column: auto; }
+  .autumn-home .spot-gallery--compact .photo-frame, .autumn-home .gallery-item:nth-child(5n + 1) .photo-frame { aspect-ratio: 4/3; }
+  .autumn-home .gallery-name { font-size: 14px; letter-spacing: 0; line-height: 1.6; margin-top: 7px; }
+}
+/* Transparent marker margins must not cover a neighboring visible pin. */
+.autumn-home .spot-map .koyo-marker { pointer-events: none; }
+
+.autumn-home .spot-map .map-pin { pointer-events: none; }
+.autumn-home .spot-map .map-pin-body, .autumn-home .spot-map .map-pin-center { pointer-events: auto; }

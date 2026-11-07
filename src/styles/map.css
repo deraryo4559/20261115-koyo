@@ -15,14 +15,13 @@
 .spot-map .leaflet-control-zoom a:hover { background: #f0e8d9; }
 .spot-map .leaflet-control-zoom .leaflet-disabled { background: #e6e3d9; color: #8c897d; }
 .spot-map .koyo-marker { display: grid; place-items: center; border: none; background: transparent; }
-.spot-map .koyo-marker span {
-  display: grid; place-items: center; width: 22px; height: 22px;
-  border-radius: 50%; border: 2px solid var(--pin-color);
-  background: var(--pin-color); color: #fffaf0;
-  font-size: 12px; font-weight: 700; line-height: 1;
-  box-shadow: 0 1px 3px #33211333;
-}
-.spot-map .koyo-marker.is-selected span { width: 34px; height: 34px; background: var(--pin-color); color: #fffaf0; border: 3px solid #fffaf0; box-shadow: 0 0 0 2px var(--pin-color); }
+.spot-map .map-pin { overflow: visible; display: block; filter: drop-shadow(0 2px 1px #30251c33); transform-origin: 18px 40px; transition: transform .16s ease; }
+.spot-map .map-pin-body { fill: var(--pin-color); stroke: #fff9ed; stroke-width: 2; stroke-linejoin: round; }
+.spot-map .map-pin-center { fill: #fff9ed; }
+.spot-map .map-pin-shadow { fill: #30251c; opacity: .2; }
+.spot-map .koyo-marker:hover .map-pin, .spot-map .koyo-marker:focus-visible .map-pin { transform: scale(1.12); }
+.spot-map .koyo-marker.is-selected .map-pin { transform: scale(1.2); }
+.spot-map .koyo-marker.is-selected .map-pin-body { stroke-width: 3; }
 .spot-map .koyo-marker:focus-visible { outline: 3px solid #143e70; outline-offset: 1px; border-radius: 50%; }
 .spot-map .spot-map-loading { position: absolute; z-index: 800; right: 14px; top: 14px; margin: 0; padding: 10px 13px; background: #fffcf4; color: #55483b; font-size: 13px; pointer-events: none; }
 .spot-map .spot-map-error { position: absolute; z-index: 800; left: 62px; right: 14px; top: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; padding: 13px 16px; background: #fffcf4; color: #30251c; box-shadow: 0 2px 12px #3321131a; }

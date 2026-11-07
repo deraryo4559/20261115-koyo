@@ -21,6 +21,7 @@ import SpotGallery from "./SpotGallery";
 import SpotDetails from "./SpotDetails";
 import Credits from "./Credits";
 import MapErrorBoundary from "./MapErrorBoundary";
+import "../styles/autumn-map.css";
 
 const SpotMap = lazy(() => import("./SpotMap"));
 
@@ -141,7 +142,7 @@ export default function KoyoApp() {
   }, []);
 
   return (
-    <>
+    <div className="autumn-home">
       <a className="skip-link" href="#main-content">
         スポット一覧へ
       </a>
@@ -251,6 +252,6 @@ export default function KoyoApp() {
       <p className="sr-only" role="status" aria-live="polite">
         {announcement}
       </p>
-    </>
+    </div>
   );
 }

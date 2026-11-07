@@ -216,10 +216,10 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
         keyboard: true,
         autoPanOnFocus: false,
         icon: leaflet.divIcon({
-          html: `<span style="--pin-color: ${route.color}"></span>`,
+          html: `<svg class="map-pin" width="36" height="44" viewBox="0 0 36 44" aria-hidden="true" style="--pin-color: ${route.color}"><ellipse class="map-pin-shadow" cx="18" cy="40" rx="9" ry="2.5"/><path class="map-pin-body" d="M18 40C15 35 4 24 4 16a14 14 0 0 1 28 0c0 8-11 19-14 24Z"/><circle class="map-pin-center" cx="18" cy="16" r="4.5"/></svg>`,
           className: 'koyo-marker',
           iconSize: [44, 44],
-          iconAnchor: [22, 22],
+          iconAnchor: [22, 40],
         }),
         alt: spot.name,
       });
