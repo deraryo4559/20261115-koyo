@@ -17,8 +17,5 @@ export async function generateMetadata({ params }: Props) {
 export default async function SpotPage({ params }: Props) {
   const spot = spotById[(await params).id.toUpperCase()];
   if (!spot) return <main className="content-width"><h1>スポットが見つかりません</h1><a href={assetUrl('/')}>スポット一覧へ</a></main>;
-  const siblings = spots.filter((item) => item.routeId === spot.routeId);
-  const index = siblings.findIndex((item) => item.id === spot.id);
-  const adjacent = (item: typeof spot | undefined) => item ? { id: item.id, name: item.name } : null;
-  return <SpotAlbum spot={spot} previous={adjacent(siblings[index - 1])} next={adjacent(siblings[index + 1])} />;
+  return <SpotAlbum spot={{ id: spot.id, name: spot.name, photos: spot.photos }} />;
 }
