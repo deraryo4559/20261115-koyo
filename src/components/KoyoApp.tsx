@@ -107,7 +107,7 @@ export default function KoyoApp() {
         <button id="mode-map" type="button" aria-pressed={state.view === 'map'} aria-controls="map-view" onClick={() => changeView('map')}>地図から探す</button>
       </nav>
       <nav className="route-filter" aria-label="行き先の方面">
-        <button type="button" aria-pressed={state.route === 'all'} onClick={() => changeRoute('all')} data-route="all"><span>すべて</span><span className="route-count">19</span></button>
+        <button type="button" aria-pressed={state.route === 'all'} onClick={() => changeRoute('all')} data-route="all"><span>すべて</span><span className="route-count">{spots.length}</span></button>
         {routes.map((route) => <button key={route.id} type="button" data-route={route.id} aria-pressed={state.route === route.id} aria-label={`${route.label}、${route.count}スポット`} onClick={() => changeRoute(route.id)}><span className="route-name"><span className="route-name-full">{route.label}</span><span className="route-name-short">{route.shortLabel}</span></span><span className="route-count">{route.count}</span></button>)}
       </nav>
     </header>

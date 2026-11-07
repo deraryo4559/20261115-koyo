@@ -5,11 +5,12 @@ import { spots, filterSpots } from '../src/data';
 import { routes } from '../src/data/routes';
 
 describe('published spot catalog', () => {
-  it('contains the 19 requested places once, in the three disjoint routes', () => {
-    expect(spots.map((spot) => spot.id)).toEqual(Array.from({ length: 19 }, (_, index) => `P${String(index + 1).padStart(2, '0')}`));
-    expect(new Set(spots.map((spot) => spot.name)).size).toBe(19);
-    expect(routes.map((route) => filterSpots(route.id).length)).toEqual([4, 6, 9]);
-    expect(filterSpots('all')).toHaveLength(19);
+  it('contains the 20 requested places once, in the three disjoint routes', () => {
+    expect(spots.map((spot) => spot.id)).toEqual(Array.from({ length: 20 }, (_, index) => `P${String(index + 1).padStart(2, '0')}`));
+    expect(new Set(spots.map((spot) => spot.name)).size).toBe(20);
+    expect(routes.map((route) => filterSpots(route.id).length)).toEqual([4, 7, 9]);
+    for (const route of routes) expect(filterSpots(route.id)).toHaveLength(route.count);
+    expect(filterSpots('all')).toHaveLength(20);
     expect(spots.some((spot) => /筑波山|あしかが|竜神峡/.test(spot.name))).toBe(false);
   });
 
@@ -27,7 +28,7 @@ describe('published spot catalog', () => {
       expect(spot.locationNote).not.toBe('');
       links.add(spot.googleMapsUrl);
     }
-    expect(links.size).toBe(19);
+    expect(links.size).toBe(20);
   });
 
   it('gives every spot a distinct photo album and an attributed local autumn cover', () => {

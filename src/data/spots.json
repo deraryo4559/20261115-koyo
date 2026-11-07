@@ -577,5 +577,42 @@
     ],
     "verifiedAt": "2026-11-07",
     "coordinateStatus": "verified"
+  },
+  {
+    "id": "P20",
+    "name": "新倉山浅間公園",
+    "routeId": "yamanashi",
+    "coordinates": [
+      35.501391,
+      138.801631
+    ],
+    "kind": "公園・展望",
+    "description": "新倉山の中腹にある公園。紅葉に囲まれた忠霊塔と富士山、富士吉田の街並みを展望デッキから眺められます。",
+    "address": "山梨県富士吉田市浅間2-4-1",
+    "googleMapsUrl": "https://www.google.com/maps?cid=10371357274634952829",
+    "officialUrl": "https://www.fujiyoshida.net/spot/index.php?p=12",
+    "locationNote": "地図は公式観光案内が示す公園・忠霊塔エリアの位置です。駐車場や車の入口の位置とは異なります。",
+    "parkingNote": "周辺に市営の有料駐車場があります。場所・料金・利用条件は市の公式案内で確認してください。忠霊塔前広場までの車両進入は控えるよう案内されています。",
+    "walkingNote": "展望デッキへは398段の咲くや姫階段などを徒歩で上ります。選ぶ駐車場から公園入口までの距離は異なります。",
+    "sources": [
+      {
+        "label": "富士吉田観光ガイド（公式）",
+        "url": "https://www.fujiyoshida.net/spot/index.php?p=12"
+      },
+      {
+        "label": "富士吉田市・新倉山浅間公園",
+        "url": "https://www.city.fujiyoshida.yamanashi.jp/page/13101.html"
+      },
+      {
+        "label": "富士吉田市・駐車場有料化の案内",
+        "url": "https://www.city.fujiyoshida.yamanashi.jp/page/8788.html"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=10371357274634952829"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
   }
 ]
