@@ -1,0 +1,28 @@
+# Private planning material; never add with --force.
+/requirment/
+/requirements/
+
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies and generated files
+node_modules/
+dist/
+.next/
+.vinext/
+.sites-runtime/
+.wrangler/
+coverage/
+*.tsbuildinfo
+/next-env.d.ts
+
+# Local development output
+.local/
+outputs/
+work/
+*.log
+.DS_Store

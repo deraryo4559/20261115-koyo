@@ -1,0 +1,581 @@
+[
+  {
+    "id": "P01",
+    "name": "仙石原すすき草原",
+    "routeId": "hakone",
+    "coordinates": [
+      35.2592974,
+      139.0031858
+    ],
+    "kind": "草原・散策",
+    "description": "山の斜面を覆うすすきの穂を、一本道を歩きながら眺める場所。赤いもみじとは違う、草原の秋を楽しめます。",
+    "address": "神奈川県足柄下郡箱根町仙石原",
+    "googleMapsUrl": "https://www.google.com/maps?cid=6556923391506523846",
+    "officialUrl": "https://www.hakone.or.jp/526",
+    "locationNote": "草原の観賞エリアを示しています。駐車場や車の進入口の位置とは異なります。",
+    "parkingNote": "利用できる駐車場と開設期間は未確認。公式案内で確認してください。",
+    "walkingNote": "草原内の一本道を徒歩で散策します。駐車場所からの距離は未確認。",
+    "sources": [
+      {
+        "label": "箱根町観光協会",
+        "url": "https://www.hakone.or.jp/526"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=6556923391506523846"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P02",
+    "name": "丹沢湖",
+    "routeId": "hakone",
+    "coordinates": [
+      35.4134107,
+      139.0400499
+    ],
+    "kind": "湖・湖畔",
+    "description": "山々に囲まれた湖を、湖畔の景色と一緒に楽しむ候補。水面と対岸の木々を眺める、ゆったりした寄り道に。",
+    "address": "神奈川県足柄上郡山北町",
+    "googleMapsUrl": "https://www.google.com/maps?cid=4910895054623352358",
+    "officialUrl": "https://www.kanagawa-kankou.or.jp/spot/6436",
+    "locationNote": "湖の代表位置です。湖畔の展望場所や駐車場へ直接案内するピンではありません。",
+    "parkingNote": "神奈川県は湖畔各所の駐車場を案内しています。利用する場所ごとの料金・開場条件は未確認。",
+    "walkingNote": "湖畔の立ち寄り場所によって異なります。徒歩距離・所要時間は未確認。",
+    "sources": [
+      {
+        "label": "神奈川県観光協会",
+        "url": "https://www.kanagawa-kankou.or.jp/spot/6436"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=4910895054623352358"
+      },
+      {
+        "label": "神奈川県・丹沢湖周辺の観光案内",
+        "url": "https://www.pref.kanagawa.jp/docs/m2g/hakokin.html"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P03",
+    "name": "芦ノ湖スカイライン",
+    "routeId": "hakone",
+    "coordinates": [
+      35.2107411,
+      138.9876215
+    ],
+    "kind": "観光道路",
+    "description": "芦ノ湖の西側の山並みを走るドライブ道路。道路沿いの展望地点から、富士山や湖を眺める楽しみがあります。",
+    "address": "箱根・芦ノ湖西岸",
+    "googleMapsUrl": "https://www.google.com/maps?cid=13687379359481249012",
+    "officialUrl": "https://www.ashinoko-skyline.co.jp/",
+    "locationNote": "道路上の代表位置です。進入口・料金所・駐車できる展望地点は公式道路案内で確認してください。",
+    "parkingNote": "途中の立ち寄り施設ごとに確認が必要です。対象地点の駐車条件は未確認。",
+    "walkingNote": "車窓と展望地点が中心。各立ち寄り地点の徒歩距離は未確認。",
+    "sources": [
+      {
+        "label": "芦ノ湖スカイライン",
+        "url": "https://www.ashinoko-skyline.co.jp/"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=13687379359481249012"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P04",
+    "name": "アネスト岩田 ターンパイク箱根",
+    "routeId": "hakone",
+    "coordinates": [
+      35.2050285,
+      139.0889321
+    ],
+    "kind": "観光道路",
+    "description": "小田原側から箱根の山へ上がる観光道路。沿道の季節の木々と、高さによって変わる眺望をドライブで楽しめます。",
+    "address": "神奈川県小田原市〜箱根周辺",
+    "googleMapsUrl": "https://www.google.com/maps?cid=13105691781302610647",
+    "officialUrl": "https://www.htpl.co.jp/",
+    "locationNote": "道路上の代表位置です。大観山展望台やスカイラウンジそのものを示すピンではありません。",
+    "parkingNote": "道路沿いの展望駐車場などを利用します。立ち寄り地点の利用条件は公式案内で確認してください。",
+    "walkingNote": "車窓と展望地点が中心。駐車場から観賞場所までの距離は立ち寄り先によって異なります。",
+    "sources": [
+      {
+        "label": "箱根ターンパイク",
+        "url": "https://www.htpl.co.jp/"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=13105691781302610647"
+      },
+      {
+        "label": "日本観光自動車道協会",
+        "url": "https://tourism-road.or.jp/drive_guide/anest-iwata-turnpike-hakone"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P05",
+    "name": "西沢渓谷",
+    "routeId": "yamanashi",
+    "coordinates": [
+      35.8694472,
+      138.7401336
+    ],
+    "kind": "渓谷・ハイキング",
+    "description": "清流や滝と、渓谷を包む木々を眺めながら歩く場所。景色をじっくり味わうハイキングをしたい日に。",
+    "address": "山梨県山梨市三富川浦",
+    "googleMapsUrl": "https://www.google.com/maps?cid=17729862204042431969",
+    "officialUrl": "https://www.yamanashi-kankou.jp/kankou/spot/p1_4536.html",
+    "locationNote": "渓谷エリア内の位置です。登山口・駐車場の位置とは異なります。",
+    "parkingNote": "駐車場の入口と利用条件は公式案内で確認してください。現在の利用条件は未確認。",
+    "walkingNote": "山道のハイキングを伴います。開通区間とコース所要時間を公式案内で確認してから計画してください。",
+    "sources": [
+      {
+        "label": "山梨県公式観光情報",
+        "url": "https://www.yamanashi-kankou.jp/kankou/spot/p1_4536.html"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=17729862204042431969"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P06",
+    "name": "旭日丘湖畔緑地公園",
+    "routeId": "yamanashi",
+    "coordinates": [
+      35.4082705,
+      138.8786942
+    ],
+    "kind": "湖畔公園",
+    "description": "山中湖の湖岸に沿って木々が並ぶ公園。湖畔の遊歩道を歩き、木漏れ日や水辺の景色を楽しめます。",
+    "address": "山梨県南都留郡山中湖村平野（旭日丘）",
+    "googleMapsUrl": "https://www.google.com/maps?cid=16486860382952819492",
+    "officialUrl": "https://lake-yamanakako.com/spot/10352",
+    "locationNote": "湖畔公園の観賞エリアを示しています。駐車場の位置とは異なります。",
+    "parkingNote": "公園周辺の駐車場とイベント時の運用は未確認。観光協会の案内で確認してください。",
+    "walkingNote": "湖畔の遊歩道を散策します。駐車場所からの距離は未確認。",
+    "sources": [
+      {
+        "label": "山中湖観光協会",
+        "url": "https://lake-yamanakako.com/spot/10352"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=16486860382952819492"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P07",
+    "name": "河口湖もみじ回廊",
+    "routeId": "yamanashi",
+    "coordinates": [
+      35.525818,
+      138.7623326
+    ],
+    "kind": "もみじの散策路",
+    "description": "河口湖の北岸にある、もみじが連なる散策エリア。並木の下を歩きながら、頭上や足元の色を楽しめます。",
+    "address": "山梨県南都留郡富士河口湖町河口",
+    "googleMapsUrl": "https://www.google.com/maps?cid=1915856053424014205",
+    "officialUrl": "https://www.yamanashi-kankou.jp/kankou/spot/p1_4534.html",
+    "locationNote": "もみじ回廊の位置です。別スポットの「もみじトンネル」ではありません。",
+    "parkingNote": "周辺駐車場の開設場所・利用条件は未確認。祭り期間の案内を確認してください。",
+    "walkingNote": "回廊を徒歩で散策します。駐車場所からの距離は未確認。",
+    "sources": [
+      {
+        "label": "山梨県公式観光情報",
+        "url": "https://www.yamanashi-kankou.jp/kankou/spot/p1_4534.html"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=1915856053424014205"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P08",
+    "name": "昇仙峡",
+    "routeId": "yamanashi",
+    "coordinates": [
+      35.7454865,
+      138.5676333
+    ],
+    "kind": "渓谷・散策",
+    "description": "大きな岩壁と清流がつくる渓谷の景色を、木々の彩りとともに楽しむ場所。歩く区間を選びながら自然を眺められます。",
+    "address": "山梨県甲府市・昇仙峡周辺",
+    "googleMapsUrl": "https://www.google.com/maps?cid=205999332864034822",
+    "officialUrl": "https://www.shosenkyo-kankoukyokai.com/",
+    "locationNote": "渓谷の代表位置です。仙娥滝・ロープウェイ・各駐車場とは区別してください。",
+    "parkingNote": "散策の出発地点によって利用する駐車場が異なります。個別の利用条件は未確認。",
+    "walkingNote": "選ぶ遊歩道の区間によって距離と高低差が変わります。コースは観光協会の案内で確認してください。",
+    "sources": [
+      {
+        "label": "昇仙峡観光協会",
+        "url": "https://www.shosenkyo-kankoukyokai.com/"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=205999332864034822"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P09",
+    "name": "御坂峠",
+    "routeId": "yamanashi",
+    "coordinates": [
+      35.5677148,
+      138.7772945
+    ],
+    "kind": "峠・山地",
+    "description": "御坂山地の木々や峠道の景観を楽しむ候補。山歩きを含む場所として、立ち寄り方を事前に決めておきたい地点です。",
+    "address": "山梨県笛吹市・富士河口湖町境付近",
+    "googleMapsUrl": "https://www.google.com/maps?cid=9415340390488287156",
+    "officialUrl": "https://kodo.jac1.or.jp/kodo120_detail/75_misaka1/",
+    "locationNote": "地図は峠の登録位置です。旧御坂トンネルや天下茶屋の車道地点と同一ではなく、車で直接到着できる場所とは扱いません。",
+    "parkingNote": "登山・散策の出発地点となる駐車場は未確認。車の到着地点は別途確認してください。",
+    "walkingNote": "山道の徒歩移動が想定されます。コース・所要時間・通行状況は未確認。",
+    "sources": [
+      {
+        "label": "日本山岳会・御坂越",
+        "url": "https://kodo.jac1.or.jp/kodo120_detail/75_misaka1/"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=9415340390488287156"
+      },
+      {
+        "label": "山梨県公式観光情報・御坂峠旧道",
+        "url": "https://www.yamanashi-kankou.jp/kankou/spot/p1_4616.html"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P10",
+    "name": "四尾連湖",
+    "routeId": "yamanashi",
+    "coordinates": [
+      35.5297732,
+      138.5171308
+    ],
+    "kind": "湖・湖畔",
+    "description": "山あいに静かに広がる小さな湖。湖畔の木々と水面への映り込みを眺めながら、落ち着いて過ごせます。",
+    "address": "山梨県西八代郡市川三郷町山保",
+    "googleMapsUrl": "https://www.google.com/maps?cid=5431073385792682084",
+    "officialUrl": "https://www.town.ichikawamisato.yamanashi.jp/50sightsee/50guide/shibireko.html",
+    "locationNote": "湖の代表位置です。湖畔の山荘や駐車場の位置とは異なります。",
+    "parkingNote": "町の案内では駐車場は有料。料金と利用条件は水明荘・龍雲荘などの管理先で確認してください。",
+    "walkingNote": "湖畔を徒歩で散策します。選ぶ駐車場からの距離や所要時間は未確認。",
+    "sources": [
+      {
+        "label": "市川三郷町",
+        "url": "https://www.town.ichikawamisato.yamanashi.jp/50sightsee/50guide/shibireko.html"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=5431073385792682084"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P11",
+    "name": "評議原",
+    "routeId": "chichibu-tama",
+    "coordinates": [
+      35.6034333,
+      139.2807833
+    ],
+    "kind": "もみじ林・ハイキング",
+    "description": "城山湖周辺のハイキングコースにあるもみじの林。木々の下を歩いて、森の中の秋を楽しむ場所です。",
+    "address": "神奈川県相模原市緑区",
+    "googleMapsUrl": "https://www.google.com/maps?cid=9974441869145429036",
+    "officialUrl": "https://www.kanagawa-kankou.or.jp/kanagawayokohamadc/spot/6433",
+    "locationNote": "林の中の観賞地点です。車で直接入る施設や駐車場ではありません。",
+    "parkingNote": "ハイキングの出発地点の駐車場は未確認。城山湖周辺の公式案内で確認してください。",
+    "walkingNote": "ハイキングコースを歩いて訪れます。駐車場所からの所要時間は未確認。",
+    "sources": [
+      {
+        "label": "神奈川県観光協会",
+        "url": "https://www.kanagawa-kankou.or.jp/kanagawayokohamadc/spot/6433"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=9974441869145429036"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P12",
+    "name": "豆焼橋",
+    "routeId": "chichibu-tama",
+    "coordinates": [
+      35.9115209,
+      138.8210361
+    ],
+    "kind": "道路橋・眺望",
+    "description": "奥秩父の山あいに架かる道路橋。谷の深さと周囲の山並みを一緒に眺める、ドライブ途中の景観スポットです。",
+    "address": "埼玉県秩父市大滝",
+    "googleMapsUrl": "https://www.google.com/maps?cid=16455355032280451049",
+    "officialUrl": "https://www.pref.saitama.lg.jp/a1001/doboku-sansaku/karisakaohhashi-mameyakibashi.html",
+    "locationNote": "橋の位置です。停車地点ではありません。観賞には出会いの丘などの安全な立ち寄り場所を選んでください。",
+    "parkingNote": "埼玉県の案内には出会いの丘駐車場の記載があります。現地の利用条件を確認してください。",
+    "walkingNote": "駐車場から観賞場所までの距離は未確認。橋や車道への路上駐車を前提にしません。",
+    "sources": [
+      {
+        "label": "埼玉県・橋りょう案内",
+        "url": "https://www.pref.saitama.lg.jp/a1001/doboku-sansaku/karisakaohhashi-mameyakibashi.html"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=16455355032280451049"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P13",
+    "name": "大血川",
+    "routeId": "chichibu-tama",
+    "coordinates": [
+      35.9301356,
+      138.9627342
+    ],
+    "kind": "河川・流域",
+    "description": "秩父の山あいを流れる川。谷を包む木々や山の斜面を見上げる景色が特徴の、渓谷沿いの候補です。",
+    "address": "埼玉県秩父市大滝",
+    "googleMapsUrl": "https://www.google.com/maps?cid=2113743083214975246",
+    "officialUrl": "https://navi.city.chichibu.lg.jp/p_flower/1550/#oochigawa",
+    "locationNote": "河川の代表位置です。展望台・釣り場・駐車場を示すものではありません。秩父市の案内に大血川線の車両通行止め情報があるため、車の到着地点と最新の通行状況を確認してください。",
+    "parkingNote": "利用できる駐車場所は未確認。林道の通行状況を含め、秩父市の案内で確認してください。",
+    "walkingNote": "観賞場所によって異なります。林道・遊歩道の通行可否や徒歩距離は未確認。",
+    "sources": [
+      {
+        "label": "秩父市・紅葉観賞マップ",
+        "url": "https://navi.city.chichibu.lg.jp/p_flower/1550/#oochigawa"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=2113743083214975246"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P14",
+    "name": "奥多摩周遊道路",
+    "routeId": "chichibu-tama",
+    "coordinates": [
+      35.7563739,
+      139.0243416
+    ],
+    "kind": "観光道路",
+    "description": "奥多摩湖側と檜原村側を結ぶ山のドライブ道路。沿道の木々や展望場所から見渡す山並みを楽しめます。",
+    "address": "東京都西多摩郡奥多摩町・檜原村",
+    "googleMapsUrl": "https://www.google.com/maps?cid=3831752931323738021",
+    "officialUrl": "https://www.kensetsu.metro.tokyo.lg.jp/jimusho/nishiken/okutama-hp/okutama-hp-koutu-top",
+    "locationNote": "道路上の代表位置です。進入口・駐車場とは異なります。夜間や天候による通行規制は公式案内で確認してください。",
+    "parkingNote": "東京都の案内には月夜見第一駐車場などの記載があります。選んだ駐車場の利用条件を確認してください。",
+    "walkingNote": "車窓と展望地点が中心。徒歩での移動は各立ち寄り先の案内に従ってください。",
+    "sources": [
+      {
+        "label": "東京都建設局",
+        "url": "https://www.kensetsu.metro.tokyo.lg.jp/jimusho/nishiken/okutama-hp/okutama-hp-koutu-top"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=3831752931323738021"
+      },
+      {
+        "label": "東京都建設局・沿道の見どころと駐車場",
+        "url": "https://www.kensetsu.metro.tokyo.lg.jp/jimusho/nishiken/okutama-hp/okutama-hp-midokoro-top"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P15",
+    "name": "国営昭和記念公園",
+    "routeId": "chichibu-tama",
+    "coordinates": [
+      35.7117865,
+      139.393631
+    ],
+    "kind": "公園・庭園",
+    "description": "イチョウ並木や日本庭園など、園内のさまざまな秋の景色を歩いて見比べられる公園。散策を中心に過ごしたい日に。",
+    "address": "東京都立川市・昭島市",
+    "googleMapsUrl": "https://www.google.com/maps?cid=15553829709366506771",
+    "officialUrl": "https://www.showakinen-koen.jp/",
+    "locationNote": "公園の代表位置です。日本庭園や入園口・駐車場の場所とは区別してください。",
+    "parkingNote": "入園口と駐車場を公式アクセス案内で選んでください。料金・利用時間は現行の案内で確認が必要です。",
+    "walkingNote": "広い園内を徒歩で移動します。目的の観賞場所に近い入園口を選び、園内マップで距離を確認してください。",
+    "sources": [
+      {
+        "label": "国営昭和記念公園",
+        "url": "https://www.showakinen-koen.jp/"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=15553829709366506771"
+      },
+      {
+        "label": "昭和記念公園・秋の景観案内",
+        "url": "https://www.showakinen-koen.jp/event/58732/"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P16",
+    "name": "嵐山渓谷",
+    "routeId": "chichibu-tama",
+    "coordinates": [
+      36.0332058,
+      139.3018612
+    ],
+    "kind": "渓谷・散策",
+    "description": "槻川の清流、岩畳、周囲の木々がつくる景観を楽しむ場所。川の曲がりに沿って変わる景色を散策できます。",
+    "address": "埼玉県比企郡嵐山町",
+    "googleMapsUrl": "https://www.google.com/maps?cid=16966346078798378157",
+    "officialUrl": "https://www.ranzan-kanko.jp/keikoku",
+    "locationNote": "埼玉県の「らんざん」の渓谷です。京都の嵐山ではありません。駐車場の位置とは異なります。",
+    "parkingNote": "観光協会の駐車場案内を確認してください。現在の利用条件は未確認。",
+    "walkingNote": "遊歩道や川沿いを散策します。増水・工事などによる迂回案内を公式ページで確認してください。",
+    "sources": [
+      {
+        "label": "嵐山町観光協会",
+        "url": "https://www.ranzan-kanko.jp/keikoku"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=16966346078798378157"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P17",
+    "name": "長瀞岩畳",
+    "routeId": "chichibu-tama",
+    "coordinates": [
+      36.0948604,
+      139.1156638
+    ],
+    "kind": "岩畳・河岸",
+    "description": "広がる岩畳から、荒川と対岸の崖や木々を眺める場所。川辺の開けた景色を楽しみたいときの候補です。",
+    "address": "埼玉県秩父郡長瀞町長瀞",
+    "googleMapsUrl": "https://www.google.com/maps?cid=17298407701684552445",
+    "officialUrl": "https://www.nagatoro.gr.jp/kouyo2026/",
+    "locationNote": "岩畳の位置です。月の石もみじ公園など別の紅葉スポットとは区別してください。",
+    "parkingNote": "観光協会は長瀞駅周辺の有料駐車場の利用を案内しています。料金は各駐車場で確認してください。",
+    "walkingNote": "観光協会の目安では長瀞駅から徒歩約5分。駐車場からの距離は利用先によって異なり、岩畳は足元に段差があります。",
+    "sources": [
+      {
+        "label": "長瀞町観光協会",
+        "url": "https://www.nagatoro.gr.jp/kouyo2026/"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=17298407701684552445"
+      },
+      {
+        "label": "長瀞町観光協会・アクセスFAQ",
+        "url": "https://www.nagatoro.gr.jp/faq/"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P18",
+    "name": "城峯公園",
+    "routeId": "chichibu-tama",
+    "coordinates": [
+      36.1238625,
+      139.0242473
+    ],
+    "kind": "公園・展望",
+    "description": "神流湖を望む高台の公園。冬桜と周囲の紅葉を楽しむ季節の景観があり、園内の散策や展望に立ち寄れます。",
+    "address": "埼玉県児玉郡神川町矢納1277-3",
+    "googleMapsUrl": "https://www.google.com/maps?cid=16694886197023050882",
+    "officialUrl": "https://www.kamikawa-kanko.com/miru/%E5%9F%8E%E5%B3%AF%E5%85%AC%E5%9C%92/",
+    "locationNote": "神川町の城峯公園です。「城峯山」の山頂を示すものではありません。",
+    "parkingNote": "観光協会は駐車場ありと案内しています。季節の交通規制や利用条件は訪問前に確認してください。",
+    "walkingNote": "高台の園内を散策します。観賞場所までの距離と坂・段差の詳細は未確認。",
+    "sources": [
+      {
+        "label": "神川町観光協会",
+        "url": "https://www.kamikawa-kanko.com/miru/%E5%9F%8E%E5%B3%AF%E5%85%AC%E5%9C%92/"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=16694886197023050882"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  },
+  {
+    "id": "P19",
+    "name": "秋川渓谷",
+    "routeId": "chichibu-tama",
+    "coordinates": [
+      35.7265758,
+      139.1897668
+    ],
+    "kind": "渓谷・流域",
+    "description": "秋川沿いの水辺と山々を眺める広いエリア。歩きたい区間や立ち寄り場所を選んで、渓谷の秋を楽しめます。",
+    "address": "東京都あきる野市〜西多摩郡檜原村",
+    "googleMapsUrl": "https://www.google.com/maps?cid=117088432341018741",
+    "officialUrl": "https://www.city.akiruno.tokyo.jp/kanko/",
+    "locationNote": "渓谷の代表位置です。石舟橋や温泉施設など特定の施設へ置き換えたピンではありません。",
+    "parkingNote": "立ち寄る場所ごとの駐車場は未確認。車の到着地点を先に選び、利用条件を確認してください。",
+    "walkingNote": "散策する区間によって距離・坂・段差が異なります。市の散策マップでコースを確認してください。",
+    "sources": [
+      {
+        "label": "あきる野市・観光情報",
+        "url": "https://www.city.akiruno.tokyo.jp/kanko/"
+      },
+      {
+        "label": "Google マップの地点情報",
+        "url": "https://www.google.com/maps?cid=117088432341018741"
+      },
+      {
+        "label": "東京の観光公式サイト GO TOKYO",
+        "url": "https://www.gotokyo.org/jp/spot/54/index.html"
+      }
+    ],
+    "verifiedAt": "2026-11-07",
+    "coordinateStatus": "verified"
+  }
+]

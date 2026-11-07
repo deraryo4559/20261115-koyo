@@ -1,0 +1,39 @@
+{
+  "name": "koyo-drive-map",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run check:privacy && vite build",
+    "start": "vinext start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check:privacy": "node scripts/check-private-files.mjs",
+    "check": "npm run check:privacy && npm run typecheck && npm test && npm run build",
+    "prepare": "node scripts/setup-hooks.mjs"
+  },
+  "dependencies": {
+    "leaflet": "1.9.4",
+    "leaflet.markercluster": "1.5.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-server-dom-webpack": "19.3.1",
+    "vinext": "1.4.4"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.21",
+    "@types/leaflet.markercluster": "^1.5.6",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "@vitejs/plugin-rsc": "^0.5.37",
+    "typescript": "^5.9.3",
+    "vite": "8.3.6",
+    "vitest": "^4.0.0"
+  }
+}
