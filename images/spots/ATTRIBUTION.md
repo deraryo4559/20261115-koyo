@@ -216,27 +216,27 @@
 
 ### 写真 1
 
-- ファイル：`/images/spots/p09-01.webp`
-- 写真：御坂峠で撮影された「錦秋の彩り」。紅葉の向こうに富士山を望みます。
-- 出典・作者：[shajinn／山と溪谷オンライン](https://www.yamakei-online.com/special2/kouyo_prize_2022.php)
-- 利用条件表記：[出典サイト掲載写真](https://www.yamakei-online.com/special2/kouyo_prize_2022.php)
-- サイズ：1280 × 886
+- ファイル：`/images/spots/p09-04.webp`
+- 写真：御坂峠・天下茶屋から望む富士山と赤く色づいた木々。
+- 出典・作者：[平岩 蘭（@huilan27／Instagram・ユーザー指定画像）](https://www.instagram.com/p/DRO87GbkmLP/)
+- 利用条件表記：[ユーザー指定画像](https://www.instagram.com/p/DRO87GbkmLP/)
+- サイズ：1440 × 960
 
 ### 写真 2
 
-- ファイル：`/images/spots/p09-02.webp`
-- 写真：秋の山肌を見渡す、御坂峠周辺からの眺め。
-- 出典・作者：[momo-mo／GANREF](https://ganref.jp/m/momo-mo/portfolios/photo_detail/2533478)
-- 利用条件表記：[出典サイト掲載写真](https://ganref.jp/m/momo-mo/portfolios/photo_detail/2533478)
-- サイズ：1200 × 800
+- ファイル：`/images/spots/p09-05.webp`
+- 写真：富士山と、黄葉や紅葉に彩られた山並み。
+- 出典・作者：[TAKASHI（画像内表記／ユーザー指定画像）](https://scontent-nrt1-2.xx.fbcdn.net/v/t39.30808-6/860299966_1659005828913629_618197432172631505_n.jpg?stp=dst-jpg_tt6&cstp=mx1638x2048&ctp=s1638x2048&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=vjS5V2_UgpYQ7kNvwFemv9R&_nc_oc=AdqEmaCyARln4W4_mqVxvNa1uSGO-PlOIRWE95my6Yc4H70jT_ZMKd-Fe0J5RbhlBiQ&_nc_zt=23&_nc_ht=scontent-nrt1-2.xx&_nc_gid=s3QdpiRTDBiZVd8m4p-Nwg&_nc_ss=7b289&oh=00_AQTctIhtEu7AOOc0wgpk9JC0B4IaqIeGXRU75xKiZ0SWuw&oe=6AF4BB6C)
+- 利用条件表記：[ユーザー指定画像](https://scontent-nrt1-2.xx.fbcdn.net/v/t39.30808-6/860299966_1659005828913629_618197432172631505_n.jpg?stp=dst-jpg_tt6&cstp=mx1638x2048&ctp=s1638x2048&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=vjS5V2_UgpYQ7kNvwFemv9R&_nc_oc=AdqEmaCyARln4W4_mqVxvNa1uSGO-PlOIRWE95my6Yc4H70jT_ZMKd-Fe0J5RbhlBiQ&_nc_zt=23&_nc_ht=scontent-nrt1-2.xx&_nc_gid=s3QdpiRTDBiZVd8m4p-Nwg&_nc_ss=7b289&oh=00_AQTctIhtEu7AOOc0wgpk9JC0B4IaqIeGXRU75xKiZ0SWuw&oe=6AF4BB6C)
+- サイズ：1536 × 1920
 
 ### 写真 3
 
-- ファイル：`/images/spots/p09-03.webp`
-- 写真：天下茶屋前からの眺め。黄葉の残る斜面と河口湖が広がります。
-- 出典・作者：[ken_dc2／GANREF](https://ganref.jp/m/ken_dc2/portfolios/photo_detail/5750992)
-- 利用条件表記：[出典サイト掲載写真](https://ganref.jp/m/ken_dc2/portfolios/photo_detail/5750992)
-- サイズ：1200 × 800
+- ファイル：`/images/spots/p09-06.webp`
+- 写真：落ち葉が積もる、紅葉に囲まれた階段状の散策路。
+- 出典・作者：[skpochi／Ameba（ユーザー指定画像）](https://stat.ameba.jp/user_images/20190828/23/skpochi/15/cb/j/o0853128014556355407.jpg?caw=800)
+- 利用条件表記：[ユーザー指定画像](https://stat.ameba.jp/user_images/20190828/23/skpochi/15/cb/j/o0853128014556355407.jpg?caw=800)
+- サイズ：800 × 1200
 
 ## P10 四尾連湖
 
@@ -513,3 +513,29 @@
 - 出典・作者：[イマタマ](https://imatama.jp/contents/mini_special/akigawakeikoku/)
 - 利用条件表記：[出典サイト掲載写真](https://imatama.jp/contents/mini_special/akigawakeikoku/)
 - サイズ：1000 × 667
+
+## P20 新倉山浅間公園
+
+### 写真 1
+
+- ファイル：`/images/spots/p20-01.webp`
+- 写真：新倉山浅間公園の紅葉、忠霊塔と富士山。
+- 出典・作者：[Fuji,CanGo（富士観光開発株式会社）](https://www.fuji-net.co.jp/report/cat-tourism-event/5732/)
+- 利用条件表記：[出典サイト掲載写真](https://www.fuji-net.co.jp/report/cat-tourism-event/5732/)
+- サイズ：1000 × 667
+
+### 写真 2
+
+- ファイル：`/images/spots/p20-02.webp`
+- 写真：新倉山浅間公園の参道。赤いもみじと階段の先に見える富士山。
+- 出典・作者：[Kyoko1903／Lemon8](https://www.lemon8-app.com/@kyoko1903_/7012469940913455622?region=jp)
+- 利用条件表記：[出典サイト掲載写真](https://www.lemon8-app.com/@kyoko1903_/7012469940913455622?region=jp)
+- サイズ：1080 × 1351
+
+### 写真 3
+
+- ファイル：`/images/spots/p20-03.webp`
+- 写真：新倉山浅間公園の鳥居越しに望む富士山と紅葉。
+- 出典・作者：[Kyoko1903／Lemon8](https://www.lemon8-app.com/@kyoko1903_/7012469940913455622?region=jp)
+- 利用条件表記：[出典サイト掲載写真](https://www.lemon8-app.com/@kyoko1903_/7012469940913455622?region=jp)
+- サイズ：1080 × 1351
