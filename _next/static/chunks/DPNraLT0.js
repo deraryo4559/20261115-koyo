@@ -1,0 +1,1 @@
+function e(e,t=`/20261115-koyo/`){return`${t.replace(/\/?$/,`/`)}${e.replace(/^\/+/,``)}`}export{e as t};
