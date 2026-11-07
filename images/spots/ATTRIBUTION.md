@@ -42,27 +42,27 @@
 
 ### 写真 1
 
-- ファイル：`/images/spots/p02-01.webp`
-- 写真：丹沢湖の水辺を彩る真っ赤なもみじ。
-- 出典・作者：[小田原箱根経済新聞](https://odawara-hakone.keizai.biz/headline/4139/)
-- 利用条件表記：[出典サイト掲載写真](https://odawara-hakone.keizai.biz/headline/4139/)
-- サイズ：1200 × 800
+- ファイル：`/images/spots/p02-04.webp`
+- 写真：紅葉に包まれた丹沢湖周辺の道路と白い車。
+- 出典・作者：[みんカラ（ユーザー指定画像）](https://cdn.snsimg.carview.co.jp/minkara/userstorage/000/046/800/139/e38036f674.jpg?ct=36baa8ab32d4)
+- 利用条件表記：[ユーザー指定画像](https://cdn.snsimg.carview.co.jp/minkara/userstorage/000/046/800/139/e38036f674.jpg?ct=36baa8ab32d4)
+- サイズ：1260 × 841
 
 ### 写真 2
 
-- ファイル：`/images/spots/p02-02.webp`
-- 写真：紅葉越しに眺める丹沢湖と橋。
-- 出典・作者：[カメラガールズ](https://www.camera-girls.net/magazine/photospot/autumnleaves/)
-- 利用条件表記：[出典サイト掲載写真](https://www.camera-girls.net/magazine/photospot/autumnleaves/)
-- サイズ：800 × 533
+- ファイル：`/images/spots/p02-05.webp`
+- 写真：赤いもみじ越しに見える丹沢湖と橋。
+- 出典・作者：[小田原箱根経済新聞（ユーザー指定画像）](https://images.keizai.biz/odawara-hakone_keizai/headline/1733101493_photo.jpg)
+- 利用条件表記：[ユーザー指定画像](https://images.keizai.biz/odawara-hakone_keizai/headline/1733101493_photo.jpg)
+- サイズ：1200 × 800
 
 ### 写真 3
 
-- ファイル：`/images/spots/p02.webp`
-- 写真：丹沢湖の秋の遠景。2012年11月撮影。
-- 出典・作者：[Σ64](https://commons.wikimedia.org/wiki/File:Lake_Tanzawa_04.jpg)
-- 利用条件表記：[CC BY 3.0](https://creativecommons.org/licenses/by/3.0)
-- サイズ：960 × 640
+- ファイル：`/images/spots/p02-06.webp`
+- 写真：丹沢湖のダム周辺を彩る紅葉と水面への映り込み。
+- 出典・作者：[小田原箱根経済新聞（ユーザー指定画像）](https://images.keizai.biz/odawara-hakone_keizai/headline/1700753955_photo.jpg)
+- 利用条件表記：[ユーザー指定画像](https://images.keizai.biz/odawara-hakone_keizai/headline/1700753955_photo.jpg)
+- サイズ：1200 × 800
 
 ## P03 芦ノ湖スカイライン
 
@@ -86,19 +86,19 @@
 
 ### 写真 1
 
-- ファイル：`/images/spots/p04-01.webp`
-- 写真：赤く色づく木々を抜ける箱根ターンパイク。
-- 出典・作者：[箱根ターンパイク株式会社（公式X）](https://x.com/turn819/status/660291798896500736)
-- 利用条件表記：[出典サイト掲載写真](https://x.com/turn819/status/660291798896500736)
-- サイズ：1200 × 675
+- ファイル：`/images/spots/p04-03.webp`
+- 写真：黄色く色づいた木々とターンパイク箱根のカーブ。
+- 出典・作者：[ユーザー指定画像（Google画像検索サムネイル）](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3_1JIaU23sphtaCb8yNIM1JEawr9wfLclehT5cYZx2WOKr2tCmGzYDWk1&s=10)
+- 利用条件表記：[ユーザー指定画像](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3_1JIaU23sphtaCb8yNIM1JEawr9wfLclehT5cYZx2WOKr2tCmGzYDWk1&s=10)
+- サイズ：451 × 679
 
 ### 写真 2
 
-- ファイル：`/images/spots/p04-02.webp`
-- 写真：紅葉した山々に囲まれた箱根ターンパイクのカーブ。
-- 出典・作者：[箱根ターンパイク株式会社（公式X）](https://x.com/turn819/status/660291798896500736)
-- 利用条件表記：[出典サイト掲載写真](https://x.com/turn819/status/660291798896500736)
-- サイズ：1200 × 675
+- ファイル：`/images/spots/p04-04.webp`
+- 写真：夕景の中、湖と山並みを望むブランコ。
+- 出典・作者：[レッツエンジョイ東京（ユーザー指定画像）](https://rstatic.enjoytokyo.jp/assets/images/event/c5/2007524/img_5.jpg?1723183031&p=t&w=1800)
+- 利用条件表記：[ユーザー指定画像](https://rstatic.enjoytokyo.jp/assets/images/event/c5/2007524/img_5.jpg?1723183031&p=t&w=1800)
+- サイズ：1800 × 1200
 
 ## P05 西沢渓谷
 
