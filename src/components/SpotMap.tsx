@@ -307,14 +307,9 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
     const frame = requestAnimationFrame(() => {
       lastRevealedRequestRef.current = revealRequest;
       if (mapRef.current !== map || selectedRef.current !== selectedId || !activeRef.current) return;
-      const reserveDetail = window.matchMedia('(min-width: 1024px)').matches;
       marker.getElement()?.classList.add('is-selected');
       marker.getElement()?.setAttribute('aria-pressed', 'true');
-      map.panInside(marker.getLatLng(), {
-        paddingTopLeft: [34, 34],
-        paddingBottomRight: [reserveDetail ? 394 : 34, 34],
-        animate: false,
-      });
+
     });
     return () => cancelAnimationFrame(frame);
   }, [selectedId, active, ready, visibleSpots, revealRequest, closePreview]);

@@ -19,7 +19,7 @@ export function restoreBrowseState(raw: string | null, available: { id: string; 
     if (saved.selectedId !== null && !selected) return { ...initialState };
     return {
       version: 1, route: saved.route, view: 'map',
-      selectedId: selected && (saved.route === 'all' || selected.routeId === saved.route) ? selected.id : null,
+      selectedId: null,
     };
   } catch {
     return { ...initialState };

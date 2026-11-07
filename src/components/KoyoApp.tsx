@@ -31,7 +31,6 @@ export default function KoyoApp() {
   const [announcement, setAnnouncement] = useState("");
   const [revealRequest, setRevealRequest] = useState(0);
   const [resetRequest, setResetRequest] = useState(0);
-  const mapSection = useRef<HTMLDivElement>(null);
   const lastTrigger = useRef<HTMLElement | null>(null);
   const selected = state.selectedId ? spotById[state.selectedId] : null;
   const filtered = useMemo(() => filterSpots(state.route), [state.route]);
@@ -70,7 +69,7 @@ export default function KoyoApp() {
   useEffect(() => {
     if (!ready) return;
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...state, selectedId: null }));
     } catch {
       /* optional persistence */
     }
@@ -138,12 +137,7 @@ export default function KoyoApp() {
     setMapMounted(true);
     setRevealRequest((request) => request + 1);
     setAnnouncement(`${spotById[id].name}の写真と詳細を表示しました。`);
-    requestAnimationFrame(() =>
-      mapSection.current?.scrollIntoView({
-        block: "start",
-        behavior: "instant",
-      }),
-    );
+
   }, []);
 
   return (
@@ -208,7 +202,7 @@ export default function KoyoApp() {
               </li>
             ))}
           </ul>
-          <div className="map-layout content-width" ref={mapSection}>
+          <div className="map-layout content-width">
             {mapMounted && (
               <MapErrorBoundary onRetry={() => window.location.reload()}>
                 <Suspense

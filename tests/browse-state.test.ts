@@ -13,9 +13,9 @@ describe('browse state recovery', () => {
   it('migrates the former scenery view while preserving the route', () => {
     expect(restore({ version: 1, route: 'yamanashi', view: 'scenery', selectedId: null })).toEqual({ version: 1, route: 'yamanashi', view: 'map', selectedId: null });
   });
-  it('keeps the selected route, view, and place on return', () => {
+  it('keeps the route but closes the spot details on reload', () => {
     const state = { version: 1, route: 'yamanashi', view: 'map', selectedId: 'P20' };
-    expect(restore(state)).toEqual(state);
+    expect(restore(state)).toEqual({ ...state, selectedId: null });
   });
   it('never restores the deleted route or deleted locations', () => {
     expect(restore({ version: 1, route: 'tsukuba-ashikaga', view: 'map', selectedId: 'P21' })).toEqual(initialState);
