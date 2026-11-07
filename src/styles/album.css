@@ -1,36 +1,161 @@
-.spot-album{--album-paper:#f2ecdf;--album-text:#332a21;--album-rule:#cfc3af;background:var(--album-paper);color:var(--album-text);min-height:100dvh;padding:0 max(28px,calc((100vw - 1376px)/2));color-scheme:light}
-.album-nav{padding:20px 0;font-size:12px}
-.album-nav>a{min-height:44px;display:flex;align-items:center;gap:18px;text-decoration:none}
-.album-back>span{font-size:24px;font-family:serif}
-.album-title-block{padding:35px 0 42px}
-.album-title-block h1{font-family:'Hiragino Mincho ProN','Yu Mincho',YuMincho,serif;font-size:clamp(34px,4.3vw,68px);font-weight:500;line-height:1.4;letter-spacing:.015em;text-wrap:balance;max-width:1100px}
-.album-title-block.album-title-block--long h1{font-size:clamp(25px,4.1vw,64px)}.album-title-block--long h1>span{display:block;white-space:nowrap}.album-title-block--long .album-title-prefix{font-size:.42em;letter-spacing:.08em;margin-bottom:.6em}
-.album-image-button{display:block;position:relative;width:100%;border:0;padding:0;background:#e1d6c2;text-align:left;cursor:zoom-in;overflow:hidden}
-.album-image-button img{width:100%;height:auto;display:block}
-.album-print--cover .album-image-button img{max-height:78vh;object-fit:cover;object-position:50% 50%;min-height:350px}
-.album-enlarge{position:absolute;bottom:15px;right:15px;display:flex;align-items:center;justify-content:center;width:36px;height:36px;background:#f8f1e5eb;color:#332a21;font-size:20px;opacity:0;transition:opacity .2s}
-.album-image-button:hover .album-enlarge,.album-image-button:focus-visible .album-enlarge{opacity:1}
-.album-attribution{font-size:11px;line-height:1.9;padding:48px 0 35px;color:#7b6c59}.album-attribution summary{cursor:pointer;min-height:44px;padding-block:12px}.album-attribution p{max-width:680px;margin:10px 0}.album-attribution ol{padding-left:25px}.album-attribution li{margin:8px 0;overflow-wrap:anywhere}
-.album-photo-error{min-height:250px;display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;font-size:13px;line-height:1.8}
-.photo-lightbox{position:fixed;inset:0;margin:0;max-width:none;max-height:none;width:100%;height:100dvh;border:0;padding:0 25px;background:#1d1b18;color:#f5eee1;overflow:hidden;z-index:3000}
-.photo-lightbox[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
-.photo-lightbox::backdrop{background:#1d1b18}.lightbox-toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:13px 0;font-size:12px}.lightbox-toolbar button{display:flex;align-items:center;gap:16px;min-height:44px;padding:5px 0 5px 15px;background:none;border:0;color:inherit;font-size:12px}.lightbox-toolbar button span{font-size:26px}
-.lightbox-image{display:grid;place-items:center;min-height:0;height:100%;touch-action:pan-y}.lightbox-image img{display:block;width:100%;height:100%;min-height:0;object-fit:contain}
-.lightbox-bottom{display:grid;grid-template-columns:52px minmax(0,1fr) 52px;gap:22px;align-items:center;padding:16px 0 24px}.lightbox-bottom>button{width:52px;height:52px;display:grid;place-items:center;border:1px solid #706658;background:transparent;color:inherit;font-size:25px}.lightbox-bottom>div{text-align:center;font-size:11px;line-height:1.7;color:#c8bda9}.lightbox-bottom>div{font-variant-numeric:tabular-nums;letter-spacing:.1em;color:#f5eee1}
-body:has(.photo-lightbox[open]){overflow:hidden}
-@media(min-width:1500px){.spot-album{padding-inline:max(56px,calc((100vw - 1376px)/2))}}
-@media(max-width:767px){
-.photo-lightbox{padding-inline:12px}.lightbox-toolbar{font-size:11px;padding:8px 0}.lightbox-toolbar button{font-size:11px;flex-shrink:0}.lightbox-bottom{gap:12px;grid-template-columns:44px minmax(0,1fr) 44px;padding:15px 0 max(18px,env(safe-area-inset-bottom))}.lightbox-bottom>button{width:44px;height:48px;font-size:23px}.lightbox-bottom>div{font-size:10px}.lightbox-bottom a{font-size:9px}
+.spot-album {
+  --album-paper: #faf9f6;
+  --album-text: #272824;
+  --album-muted: #6c6e67;
+  --album-rule: #dedfd7;
+  color-scheme: light;
+  min-height: 100dvh;
+  padding: 0 max(48px, calc((100vw - 1160px) / 2));
+  background: var(--album-paper);
+  color: var(--album-text);
 }
-@media(prefers-reduced-motion:reduce){.album-enlarge{transition:none}}
 
-.album-photographs{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:72px 24px}
-.album-print{grid-column:1/-1;min-width:0}
-.album-print:nth-child(2){grid-column:5/-1}
-.album-print:nth-child(3){grid-column:1/8}
-.album-print:nth-child(4){grid-column:8/-1;margin-top:80px}
-@media(max-width:767px){
- .spot-album{padding-inline:20px}.album-nav{padding:12px 0;font-size:11px}.album-nav>a{gap:10px}.album-title-block{padding:20px 0 28px}.album-title-block h1{font-size:32px;line-height:1.45}
- .album-photographs{grid-template-columns:1fr;gap:30px}.album-print:nth-child(n){grid-column:1;margin:0}.album-print.album-print--cover{margin-inline:-20px}.album-print--cover .album-image-button img{min-height:280px;max-height:65vh;aspect-ratio:4/3;object-fit:cover}
- .album-print:nth-child(2),.album-print:nth-child(4){margin-left:20px}.album-print:nth-child(3){margin-right:20px}.album-enlarge{opacity:1;bottom:10px;right:10px;width:32px;height:32px;font-size:18px}.album-attribution{padding:24px 0;font-size:10px}
+.album-nav { padding-top: 22px; }
+.album-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+  font-size: 11px;
+  letter-spacing: .05em;
+  text-decoration: none;
+  color: var(--album-muted);
+  transition: color .2s ease;
+}
+.album-back:hover { color: var(--album-text); }
+.album-back > span { font: 24px/1 serif; }
+.album-title-block { padding: 28px 0 48px; text-align: center; }
+.album-title-block h1 {
+  margin-inline: auto;
+  font-family: 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif;
+  font-size: clamp(28px, 2.6vw, 38px);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: .1em;
+  text-wrap: balance;
+}
+.album-title-block--long h1 > span { display: block; }
+.album-title-block--long .album-title-prefix { margin-bottom: 10px; font-size: 13px; letter-spacing: .08em; }
+
+.album-print {
+  --frame-height: min(74svh, 740px);
+  min-width: 0;
+}
+.album-print--cover { --frame-height: clamp(360px, calc(100svh - 230px), 780px); }
+.album-image-button {
+  display: block;
+  position: relative;
+  width: min(100%, var(--photo-width), calc(var(--frame-height) * var(--photo-ratio)));
+  margin-inline: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.album-image-button img { display: block; width: 100%; height: auto; }
+.album-enlarge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: #faf9f6eb;
+  color: var(--album-text);
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.album-enlarge svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.2; }
+.album-image-button:hover .album-enlarge,
+.album-image-button:focus-visible .album-enlarge { opacity: 1; transform: none; }
+.album-image-button:focus-visible { outline: 1px solid var(--album-text); outline-offset: 7px; }
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 80px 48px;
+  margin: 88px auto 0;
+  max-width: 1060px;
+}
+.album-grid > .album-print:only-child,
+.album-grid > .album-print:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.album-grid > .album-print:only-child .album-image-button,
+.album-grid > .album-print:last-child:nth-child(odd) .album-image-button { max-width: 880px; }
+
+.album-attribution {
+  margin-top: 80px;
+  padding: 14px 0 30px;
+  border-top: 1px solid var(--album-rule);
+  color: var(--album-muted);
+  font-size: 10px;
+  line-height: 1.9;
+}
+.album-attribution summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+}
+.album-attribution summary::-webkit-details-marker { display: none; }
+.album-attribution summary::after { content: '+'; font-size: 16px; }
+.album-attribution[open] summary::after { content: '−'; }
+.album-attribution ol { margin: 12px 0 0; padding-left: 20px; }
+.album-attribution li { margin: 8px 0; overflow-wrap: anywhere; }
+.album-photo-error { display: grid; place-items: center; min-height: 250px; padding: 30px; font-size: 12px; text-align: center; }
+
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0 30px;
+  overflow: hidden;
+  border: 0;
+  background: #171815;
+  color: #f5f4ef;
+}
+.photo-lightbox[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+.photo-lightbox::backdrop { background: #171815; }
+.lightbox-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 0; font-size: 11px; letter-spacing: .05em; }
+.lightbox-toolbar button { display: flex; align-items: center; gap: 16px; min-height: 44px; padding: 0 0 0 15px; border: 0; background: transparent; color: inherit; font-size: 11px; }
+.lightbox-toolbar button span { font-size: 26px; font-weight: 300; }
+.lightbox-image { display: grid; place-items: center; min-height: 0; height: 100%; touch-action: pan-y; }
+.lightbox-image img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.lightbox-bottom { display: grid; grid-template-columns: 52px minmax(0, 1fr) 52px; align-items: center; gap: 22px; padding: 16px 0 22px; }
+.lightbox-bottom > button { display: grid; place-items: center; width: 52px; height: 52px; border: 0; background: transparent; color: inherit; font: 28px/1 serif; }
+.lightbox-bottom > button:hover { background: #ffffff0a; }
+.lightbox-bottom > div { font-size: 10px; font-variant-numeric: tabular-nums; letter-spacing: .15em; text-align: center; }
+body:has(.photo-lightbox[open]) { overflow: hidden; }
+
+@media (max-width: 767px) {
+  .spot-album { padding-inline: 22px; }
+  .album-nav { padding-top: 14px; }
+  .album-back { gap: 11px; font-size: 10px; }
+  .album-title-block { padding: 22px 0 34px; }
+  .album-title-block h1 { font-size: 26px; line-height: 1.6; letter-spacing: .06em; }
+  .album-title-block--long h1 { font-size: 25px; }
+  .album-title-block--long .album-title-prefix { font-size: 11px; margin-bottom: 8px; }
+  .album-print, .album-print--cover { --frame-height: 72svh; }
+  .album-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; margin-top: 32px; }
+  .album-grid > .album-print:nth-child(n) { grid-column: 1; }
+  .album-enlarge { width: 30px; height: 30px; bottom: 9px; right: 9px; opacity: 1; transform: none; }
+  .album-enlarge svg { width: 16px; height: 16px; }
+  .album-attribution { margin-top: 38px; padding-bottom: 20px; }
+  .photo-lightbox { padding-inline: 14px; }
+  .lightbox-toolbar { gap: 12px; padding: 8px 0; font-size: 10px; }
+  .lightbox-toolbar button { font-size: 10px; flex-shrink: 0; }
+  .lightbox-bottom { grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 12px; padding: 12px 0 max(16px, env(safe-area-inset-bottom)); }
+  .lightbox-bottom > button { width: 44px; height: 48px; font-size: 25px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .album-back, .album-enlarge { transition: none; }
 }

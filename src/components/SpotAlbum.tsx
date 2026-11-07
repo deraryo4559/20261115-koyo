@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState } from 'react';
+import { useRef, useState, type CSSProperties } from 'react';
 import { assetUrl } from '../lib/asset-url';
 import type { Photo, Spot } from '../types/spot';
 import '../styles/album.css';
@@ -31,10 +31,14 @@ export default function SpotAlbum({ spot }: { spot: AlbumSpot }) {
   }
 
   function photoFigure(photo: Photo, index: number) {
-    return <figure className={`album-print${index === 0 ? ' album-print--cover' : ''}`} key={photo.src}>
+    const frameStyle = {
+      '--photo-width': `${photo.width ?? 1600}px`,
+      '--photo-ratio': (photo.width ?? 1600) / (photo.height ?? 1067),
+    } as CSSProperties;
+    return <figure className={`album-print${index === 0 ? ' album-print--cover' : ''}`} style={frameStyle} key={photo.src}>
       <button className="album-image-button" type="button" onClick={() => openPhoto(index)} aria-label={`${spot.name}の写真 ${index + 1} を拡大`}>
         <AlbumImage photo={photo} eager={index === 0} />
-        <span className="album-enlarge" aria-hidden="true">↗</span>
+        <span className="album-enlarge" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M7 3H3v4m10-4h4v4m0 6v4h-4m-6 0H3v-4" /></svg></span>
       </button>
     </figure>;
   }
@@ -49,7 +53,8 @@ export default function SpotAlbum({ spot }: { spot: AlbumSpot }) {
         <h1>{spot.id === 'P04' ? <><span className="album-title-prefix">アネスト岩田</span>{' '}<span>ターンパイク箱根</span></> : spot.name}</h1>
       </div>
       <section id="album-photos" className="album-photographs" aria-label={`${spot.name}の写真アルバム`}>
-        {photos.map(photoFigure)}
+        {photos[0] && photoFigure(photos[0], 0)}
+        <div className="album-grid">{photos.slice(1).map((photo, index) => photoFigure(photo, index + 1))}</div>
       </section>
       <details className="album-attribution"><summary>写真の出典</summary>
         <ol>{photos.map((photo) => <li key={photo.src}><a href={photo.sourceUrl} target="_blank" rel="noopener noreferrer">{photo.credit}</a><span> — </span><a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a></li>)}</ol>
