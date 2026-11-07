@@ -1,10 +1,10 @@
-0:{"__vinext_streaming_metadata_outlet:route:/spots/p21/":"$L1","page:/spots/p21/":"$L2","layout:/":"$L3","route:/spots/p21/":"$L4","__route":"route:/spots/p21/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/spots/p21/":"[\"page\",\"page:/spots/:id\",\"root-boundary:/\",\"[\\\"spots\\\",\\\"id|p21|d\\\"]\"]"},"__srcPage":["spots","[id]","page"],"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:e5ef5098bff91a60","deploymentVersion":"53ee3c0c-ea4a-4b24-8547-0c1ee6a3c77b","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
+0:{"__vinext_streaming_metadata_outlet:route:/spots/p21/":"$L1","page:/spots/p21/":"$L2","layout:/":"$L3","route:/spots/p21/":"$L4","__route":"route:/spots/p21/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/spots/p21/":"[\"page\",\"page:/spots/:id\",\"root-boundary:/\",\"[\\\"spots\\\",\\\"id|p21|d\\\"]\"]"},"__srcPage":["spots","[id]","page"],"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:e5ef5098bff91a60","deploymentVersion":"76430c98-51b2-48e4-b702-968f7f9068d1","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
 5:"RedirectBoundary"
 6:I["593f344dc510",[],"$5",1]
 7:I["8c0f216c4604",[],"Children",1]
-8:"m/20261115-koyo/_next/static/chunks/DxvDF2Yb.js\n/20261115-koyo/_next/static/css/C28RRqdv.css"
-9:"p/20261115-koyo/_next/static/chunks/DxvDF2Yb.js"
-a:"p/20261115-koyo/_next/static/chunks/DJhCxTJU.js"
+8:"m/20261115-koyo/_next/static/chunks/DcIXPlql.js\n/20261115-koyo/_next/static/css/C28RRqdv.css"
+9:"p/20261115-koyo/_next/static/chunks/DcIXPlql.js"
+a:"p/20261115-koyo/_next/static/chunks/S2-ljwi9.js"
 b:"p/20261115-koyo/_next/static/chunks/DPNraLT0.js"
 c:I["9228f887fbcc",["$8","","$9","","$a","","$b",""],"default",1]
 e:"GlobalErrorBoundary"
