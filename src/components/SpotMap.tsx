@@ -56,7 +56,7 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
   const [mobile, setMobile] = useState(false);
   const [photoPins, setPhotoPins] = useState<ReturnType<typeof layoutPhotoPins>>([]);
   useEffect(() => {
-    const query = window.matchMedia('(max-width: 767px)');
+    const query = window.matchMedia('(max-width: 767px), (max-width: 1024px) and (max-height: 600px) and (pointer: coarse)');
     const update = () => setMobile(query.matches);
     update();
     query.addEventListener('change', update);
@@ -299,6 +299,18 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
     return () => { map.off('move zoom resize', update); };
   }, [mobile, ready, visibleSpots]);
 
+  // Rotation changes the available map area; keep every filtered spot in view.
+  useEffect(() => {
+    const map = mapRef.current;
+    const leaflet = leafletRef.current;
+    if (!map || !leaflet || !mobile || !visibleSpots.length) return;
+    const refit = () => map.fitBounds(leaflet.latLngBounds(visibleSpots.map((spot) => spot.coordinates)), {
+      padding: [36, 36], maxZoom: 12, animate: false,
+    });
+    map.on('resize', refit);
+    return () => { map.off('resize', refit); };
+  }, [mobile, ready, visibleSpots]);
+
   // A filter change or explicit reset fits the bounds; detail dismissal preserves the view.
   useEffect(() => {
     const map = mapRef.current;
@@ -391,7 +403,7 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
             if (!spot) return null;
             const color = routeById[spot.routeId].color;
             return <g key={pin.id}>
-              <line x1={pin.left + 30} y1={pin.top + 48} x2={pin.x} y2={pin.y} stroke={color} />
+              <line x1={pin.left + pin.width / 2} y1={pin.top + pin.height + 4} x2={pin.x} y2={pin.y} stroke={color} />
               <circle cx={pin.x} cy={pin.y} r="2.5" fill={color} />
             </g>;
           })}
@@ -401,7 +413,7 @@ export default function SpotMap({ spots, selectedId, active, filterKey, revealRe
           if (!spot) return null;
           return <a key={spot.id} className="mobile-photo-pin" href={spotUrl(spot.id)}
             aria-label={`${spot.name}の写真アルバムを見る`}
-            style={{ left: pin.left, top: pin.top, borderColor: routeById[spot.routeId].color }}>
+            style={{ left: pin.left, top: pin.top, width: pin.width, height: pin.height, borderColor: routeById[spot.routeId].color }}>
             <PreviewPhoto spot={spot} />
             <i aria-hidden="true" style={{ borderTopColor: routeById[spot.routeId].color }} />
           </a>;

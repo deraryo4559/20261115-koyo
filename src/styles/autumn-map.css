@@ -52,7 +52,7 @@
   .autumn-home .route-filter button { font-size: 15px; min-height: 46px; padding: 9px 22px 9px 12px; }
   .autumn-home .route-count { right: 7px; font-size: 9px; }
   .autumn-home .spot-map, .autumn-home .map-loading { height: 390px; height: clamp(320px, 49svh, 440px); }
-  .autumn-home .map-legend { gap: 8px 12px; font-size: 11px; padding: 12px 0; }
+  .autumn-home .map-legend { gap: 8px 12px; font-size: 11px; padding: 4px 0; }
   .autumn-home .map-legend li { gap: 5px; }
   .autumn-home .route-key { width: 12px; height: 12px; }
   .autumn-home .map-index { padding-top: 22px; }
@@ -70,4 +70,19 @@
 
 @media (max-width: 767px) {
   .autumn-home .map-legend { order: -1; border-bottom: 0; padding: 0 0 14px; }
+}
+
+/* Touch phones keep the photo map when rotated; desktop layouts are unchanged. */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 600px) and (pointer: coarse) {
+  .autumn-home .content-width, .autumn-home .site-header { width: calc(100% - 32px - env(safe-area-inset-left) - env(safe-area-inset-right)); }
+  .autumn-home .header-top { padding: 4px 0; }
+  .autumn-home .header-top h1 { font-size: 20px; line-height: 1.4; }
+  .autumn-home .route-filter { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; padding-bottom: 6px; }
+  .autumn-home .route-filter button { min-height: 44px; font-size: 14px; padding: 8px 24px 8px 10px; }
+  .autumn-home .map-legend { order: -1; border: 0; padding: 0 0 6px; font-size: 11px; }
+  .autumn-home .map-layout .spot-map, .autumn-home .map-layout .map-loading { height: calc(100svh - 116px); min-height: 180px; }
+  .autumn-home .spot-gallery--compact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .autumn-home .gallery-item:nth-child(5n + 1) { grid-column: auto; }
+  .autumn-home .gallery-item:nth-child(5n + 1) .photo-frame { aspect-ratio: 4/3; }
+  .autumn-home .gallery-name { font-size: 16px; }
 }
