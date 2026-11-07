@@ -30,17 +30,18 @@ describe('published spot catalog', () => {
     expect(links.size).toBe(19);
   });
 
-  it('gives every spot a distinct autumn album and an attributed local cover', () => {
+  it('gives every spot a distinct photo album and an attributed local autumn cover', () => {
     for (const spot of spots) {
       expect(spot.photos.length).toBeGreaterThanOrEqual(2);
       expect(spot.photo).toBe(spot.photos[0]);
+      expect(spot.photo?.season).toBe('autumn');
       expect(new Set(spot.photos.map((photo) => photo.src)).size).toBe(spot.photos.length);
       for (const photo of spot.photos) {
         expect(photo.src).toMatch(/^\/images\/spots\/p\d{2}(?:-\d{2})?\.webp$/);
         const file = path.join(process.cwd(), 'public', photo.src);
         expect(existsSync(file)).toBe(true);
         expect(readFileSync(file).subarray(8, 12).toString()).toBe('WEBP');
-        expect(photo.season).toBe('autumn');
+        expect(['autumn', 'other', 'unknown']).toContain(photo.season);
         expect(photo.credit.length).toBeGreaterThan(0);
         expect(photo.licenseUrl).toMatch(/^https:\/\//);
         expect(photo.sourceUrl).toMatch(/^https:\/\//);
