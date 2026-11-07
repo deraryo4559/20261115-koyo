@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import { filterSpots, spotById, spots } from "../data";
-import { routes } from "../data/routes";
+import { isRouteFilter, routes } from "../data/routes";
 import {
   initialState,
   restoreBrowseState,
@@ -44,6 +44,13 @@ export default function KoyoApp() {
       /* optional persistence */
     }
     const query = new URLSearchParams(window.location.search);
+    const requestedRoute = query.get("route");
+    if (isRouteFilter(requestedRoute)) {
+      restored = { ...restored, route: requestedRoute, selectedId: null };
+      const url = new URL(window.location.href);
+      url.searchParams.delete("route");
+      window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+    }
     const requestedSpot = spots.find((spot) => spot.id === query.get("spot"));
     if (query.get("view") === "map" && requestedSpot) {
       restored = {

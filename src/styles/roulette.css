@@ -1,0 +1,17 @@
+.route-roulette { width: min(460px, calc(100% - 28px)); max-height: calc(100dvh - 24px); overflow-y: auto; border: 1px solid #bb9a7d; padding: 48px 18px 24px; background: #f5efe3; color: #30291f; text-align: center; color-scheme: light; }
+.route-roulette::backdrop { background: #241b16aa; }
+.roulette-close { position: absolute; right: 6px; top: 6px; width: 44px; height: 44px; border: 0; background: transparent; font-size: 28px; }
+.route-roulette h1 { font: 600 20px/1.6 'Yu Mincho', serif; color: #883d27; }
+.route-roulette h2 { font-size: 15px; font-weight: 400; margin-top: 10px; }
+.roulette-stage { position: relative; width: 250px; height: 250px; margin: 26px auto; }
+.roulette-wheel { width: 100%; height: 100%; border: 5px solid #fff9ed; border-radius: 50%; background: conic-gradient(#a43e27 0deg 120deg, #265f88 120deg 240deg, #64652a 240deg 360deg); box-shadow: 0 0 0 1px #bb9a7d; transition: transform 4s cubic-bezier(.12,.65,.12,1); }
+.roulette-wheel span { position: absolute; left: calc(50% - 54px); top: calc(50% - 10px); width: 108px; font-size: 12px; font-weight: 600; color: #fff9ed; }
+.roulette-pointer { position: absolute; left: calc(50% - 9px); top: -9px; z-index: 1; border: 9px solid transparent; border-top: 22px solid #30291f; }
+.roulette-spin { min-height: 48px; padding: 10px 24px; border: 0; background: #883d27; color: #fff9ed; }
+.roulette-spin:disabled { opacity: .65; }
+.roulette-result { margin-top: 16px; }
+.roulette-result p { font-size: 20px; margin-bottom: 8px; }
+.roulette-result a { display: inline-block; padding: 10px; }
+body:has(.route-roulette[open]) { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { .roulette-wheel { transition: none; } }
+@media(max-height:500px) and (orientation:landscape) { .route-roulette { width: min(640px, calc(100% - 28px)); } .roulette-stage { margin-block: 16px; } }

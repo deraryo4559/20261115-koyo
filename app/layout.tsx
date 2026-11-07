@@ -1,3 +1,4 @@
+import RouteRoulette from '../src/components/RouteRoulette';
 import type { ReactNode } from 'react';
 import { assetUrl } from '../src/lib/asset-url';
 import '../src/styles/global.css';
@@ -9,5 +10,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return <html lang="ja"><body>{children}</body></html>;
+  return <html lang="ja"><body>{children}<RouteRoulette /></body></html>;
 }
