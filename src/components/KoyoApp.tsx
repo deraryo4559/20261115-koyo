@@ -21,6 +21,7 @@ import SpotGallery from "./SpotGallery";
 import SpotDetails from "./SpotDetails";
 import Credits from "./Credits";
 import MapErrorBoundary from "./MapErrorBoundary";
+import DrivePlanCommand from "./DrivePlanCommand";
 import "../styles/autumn-map.css";
 
 const SpotMap = lazy(() => import("./SpotMap"));
@@ -186,6 +187,7 @@ export default function KoyoApp() {
         </nav>
       </header>
       <main id="main-content">
+        <DrivePlanCommand />
         <section
           id="map-view"
           className="map-section"
