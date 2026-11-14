@@ -1,6 +1,7 @@
 'use client';
-import { useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { assetUrl } from '../lib/asset-url';
+import { readPlanMode } from '../lib/plan-mode';
 import type { Photo, Spot } from '../types/spot';
 import '../styles/album.css';
 
@@ -16,6 +17,8 @@ function AlbumImage({ photo, eager = false }: { photo: Photo; eager?: boolean })
 
 export default function SpotAlbum({ spot }: { spot: AlbumSpot }) {
   const [active, setActive] = useState(0);
+  const [planMode, setPlanMode] = useState(false);
+  useEffect(() => { setPlanMode(readPlanMode().active); }, []);
   const dialog = useRef<HTMLDialogElement>(null);
   const touchStart = useRef<number | null>(null);
   const photos = spot.photos;
@@ -46,7 +49,7 @@ export default function SpotAlbum({ spot }: { spot: AlbumSpot }) {
   return <div className="spot-album">
     <a className="skip-link" href="#album-photos">写真を見る</a>
     <header className="album-nav">
-      <a href={assetUrl('/')} className="album-back"><span aria-hidden="true">←</span> 一覧に戻る</a>
+      <a href={assetUrl('/')} className="album-back"><span aria-hidden="true">←</span> {planMode ? 'ドライブプランに戻る' : '一覧に戻る'}</a>
     </header>
     <main>
       <div className={`album-title-block${spot.id === 'P04' ? ' album-title-block--long' : ''}`}>

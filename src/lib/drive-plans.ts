@@ -10,6 +10,10 @@ export interface ItineraryStop extends PlanPlace {
   departureTime?: string;
 }
 
+export function itineraryMapStops(stops: ItineraryStop[]) {
+  return stops.flatMap((stop, index) => stop.coordinates ? [{ ...stop, coordinates: stop.coordinates, order: index + 1 }] : []);
+}
+
 export function buildItinerary(stages: readonly PlanStage[], selections: PlanSelections): ItineraryStop[] {
   const lunch = lunchCandidates.find((place) => place.id === selections.lunchId) ?? lunchCandidates[0];
   const cafe = cafeCandidates.find((place) => place.id === selections.cafeId);

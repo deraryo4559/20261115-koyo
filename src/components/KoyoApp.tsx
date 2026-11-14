@@ -22,6 +22,7 @@ import SpotDetails from "./SpotDetails";
 import Credits from "./Credits";
 import MapErrorBoundary from "./MapErrorBoundary";
 import DrivePlanCommand from "./DrivePlanCommand";
+import { initialPlanMode, readPlanMode, savePlanMode, type PlanModeState } from "../lib/plan-mode";
 import "../styles/autumn-map.css";
 
 const SpotMap = lazy(() => import("./SpotMap"));
@@ -29,6 +30,7 @@ const SpotMap = lazy(() => import("./SpotMap"));
 export default function KoyoApp() {
   const [state, setState] = useState<BrowseState>(initialState);
   const [ready, setReady] = useState(false);
+  const [planMode, setPlanMode] = useState<PlanModeState>(initialPlanMode);
   const [mapMounted, setMapMounted] = useState(false);
   const [announcement, setAnnouncement] = useState("");
   const [revealRequest, setRevealRequest] = useState(0);
@@ -73,6 +75,7 @@ export default function KoyoApp() {
       );
     }
     setState(restored);
+    setPlanMode(readPlanMode());
     setReady(true);
   }, []);
   useEffect(() => {
@@ -149,10 +152,16 @@ export default function KoyoApp() {
 
   }, []);
 
+  function updatePlanMode(patch: Partial<PlanModeState>) {
+    const next = { ...planMode, ...patch };
+    savePlanMode(next);
+    setPlanMode(next);
+  }
+
   return (
     <div className="autumn-home">
       <a className="skip-link" href="#main-content">
-        スポット一覧へ
+        {planMode.active ? "ドライブプランへ" : "スポット一覧へ"}
       </a>
       <header className="site-header">
         <div className="header-top">
@@ -187,10 +196,11 @@ export default function KoyoApp() {
         </nav>
       </header>
       <main id="main-content">
-        <DrivePlanCommand />
+        <DrivePlanCommand mode={planMode} onChange={updatePlanMode} />
         <section
           id="map-view"
           className="map-section"
+          hidden={!ready || planMode.active}
           aria-label="地図から紅葉スポットを選ぶ"
         >
           <div className="map-caption content-width">
@@ -225,7 +235,7 @@ export default function KoyoApp() {
                   <SpotMap
                     spots={filtered}
                     selectedId={state.selectedId}
-                    active
+                    active={!planMode.active}
                     filterKey={state.route}
                     revealRequest={revealRequest}
                     resetRequest={resetRequest}
@@ -242,7 +252,7 @@ export default function KoyoApp() {
               />
             )}
           </div>
-          <section
+          {!planMode.active && <section
             className="map-index content-width"
             aria-label="地図と同じスポットの一覧"
           >
@@ -250,7 +260,7 @@ export default function KoyoApp() {
               スポット一覧 <span>{filtered.length}</span>
             </h2>
             <SpotGallery spots={filtered} compact />
-          </section>
+          </section>}
         </section>
       </main>
       <footer className="site-footer content-width">

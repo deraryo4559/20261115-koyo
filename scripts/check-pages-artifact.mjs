@@ -26,6 +26,17 @@ for (const spot of catalog) {
   if (!html.includes(`${basePath}/spots/${spot.id.toLowerCase()}/`)) throw new Error(`Missing gallery link: ${spot.id}`);
   verifyAssets(album);
 }
+const planPhotos = JSON.parse(readFileSync('src/data/plan-photos.json', 'utf8'));
+for (const [id, photos] of Object.entries(planPhotos)) {
+  const directory = path.join(root, 'plans', '1115', id);
+  const album = readFileSync(path.join(directory, 'index.html'), 'utf8');
+  if (!existsSync(path.join(directory, 'index.txt'))) throw new Error(`Missing plan album hydration: ${id}`);
+  for (const photo of photos) {
+    if (!album.includes(`${basePath}${photo.src}`)) throw new Error(`Missing plan photo: ${photo.src}`);
+    if (!existsSync(path.join(root, photo.thumbnailSrc))) throw new Error(`Missing plan thumbnail: ${id}`);
+  }
+  verifyAssets(album);
+}
 const forbidden = /(^|\/)(requirment|requirements|\.git|\.env(?:\.[^/]*)?|node_modules|\.local)(\/|$)/i;
 function inspect(directory) {
   for (const entry of readdirSync(directory)) {
@@ -38,4 +49,4 @@ function inspect(directory) {
 inspect(root);
 if (!existsSync(path.join(root, 'index.txt'))) throw new Error('Missing static hydration payload.');
 if (!html.includes('紅葉ドライブ地図')) throw new Error('Missing rendered application.');
-console.log(`Pages artifact OK: ${catalog.length} albums, ${assetCount} asset references verified`);
+console.log(`Pages artifact OK: ${catalog.length} spot albums + ${Object.keys(planPhotos).length} plan albums, ${assetCount} asset references verified`);

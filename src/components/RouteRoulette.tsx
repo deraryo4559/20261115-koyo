@@ -2,6 +2,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { routes } from '../data/routes';
 import { assetUrl } from '../lib/asset-url';
+import { SUPPRESS_ROULETTE_EVENT } from '../lib/roulette-command';
+import { readPlanMode } from '../lib/plan-mode';
 import '../styles/roulette.css';
 
 const CLOCK_KEY = 'koyo:roulette:main-clock:v1';
@@ -34,7 +36,18 @@ export default function RouteRoulette() {
       try { sessionStorage.setItem(CLOCK_KEY, JSON.stringify(current)); } catch { /* optional */ }
     };
     save();
+    const suppress = () => {
+      current.shown = true;
+      save();
+      if (timer.current) clearTimeout(timer.current);
+      busy.current = false;
+      setSpinning(false);
+      dialog.current?.close();
+    };
+    window.addEventListener(SUPPRESS_ROULETTE_EVENT, suppress);
+    if (readPlanMode().active) suppress();
     const tick = () => {
+      if (readPlanMode().active) { if (!current.shown) suppress(); return; }
       if (!current.shown && Date.now() - current.startedAt >= 60_000 && document.visibilityState === 'visible' && !document.querySelector('dialog[open]')) {
         dialog.current?.showModal();
         current.shown = true;
@@ -43,7 +56,11 @@ export default function RouteRoulette() {
     };
     tick();
     const interval = setInterval(tick, 1000);
-    return () => { clearInterval(interval); if (timer.current) clearTimeout(timer.current); };
+    return () => {
+      window.removeEventListener(SUPPRESS_ROULETTE_EVENT, suppress);
+      clearInterval(interval);
+      if (timer.current) clearTimeout(timer.current);
+    };
   }, []);
   function close() {
     if (timer.current) clearTimeout(timer.current);

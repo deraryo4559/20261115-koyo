@@ -1,0 +1,124 @@
+{
+  "start": {
+    "coordinates": [
+      35.77755,
+      139.72095
+    ],
+    "sourceUrl": "https://geolod.thibetanus.com/resource/wiE2Yv",
+    "note": "赤羽駅の代表位置"
+  },
+  "funari": {
+    "coordinates": [
+      35.4906218,
+      138.7605994
+    ],
+    "sourceUrl": "https://www.openstreetmap.org/node/5081535084",
+    "officialUrl": "https://www.funari.jp/shop/kawaguchiko_yamanakako"
+  },
+  "fudou-kita": {
+    "coordinates": [
+      35.5226775,
+      138.7738021
+    ],
+    "sourceUrl": "https://www.google.com/maps?cid=14826163660245978329",
+    "officialUrl": "http://www.houtou-fudou.jp/location.html"
+  },
+  "fudou-higashi": {
+    "coordinates": [
+      35.4910773,
+      138.7570765
+    ],
+    "sourceUrl": "https://www.openstreetmap.org/way/183547079",
+    "officialUrl": "http://www.houtou-fudou.jp/location.html"
+  },
+  "reimeisou": {
+    "coordinates": [
+      35.6066177,
+      138.6629203
+    ],
+    "sourceUrl": "https://reimeisou.jp/",
+    "note": "公式サイトの埋め込み地図の地点"
+  },
+  "kokubo": {
+    "coordinates": [
+      35.635514,
+      138.5615389
+    ],
+    "sourceUrl": "https://thekokubocoffee.com/pages/contact",
+    "note": "公式サイトの埋め込み地図の地点"
+  },
+  "fune": {
+    "coordinates": [
+      35.7050283,
+      138.691342
+    ],
+    "sourceUrl": "https://www.sakagura-kai.jp/access",
+    "note": "養老酒造・酒蔵櫂の1階。公式アクセス地図の地点"
+  },
+  "pamonirupuff": {
+    "coordinates": [
+      35.6182814,
+      138.6732531
+    ],
+    "sourceUrl": "https://www.google.com/maps?cid=16469468487195770958",
+    "officialUrl": "https://www.koshuvalley.com/dining/list/pamonirupuff"
+  },
+  "evameva": {
+    "coordinates": [
+      35.5672619,
+      138.5666688
+    ],
+    "sourceUrl": "https://evameva-yamanashi.jp/access",
+    "note": "公式サイトの埋め込み地図の地点"
+  },
+  "koyodai": {
+    "coordinates": [
+      35.484025,
+      138.679202
+    ],
+    "sourceUrl": "https://www.yamanashi-kankou.jp/kankou/spot/kouyo_dai.html",
+    "note": "展望スポットの代表位置。車の到着地点を示すものではありません"
+  },
+  "shoji": {
+    "coordinates": [
+      35.4906841,
+      138.6046066
+    ],
+    "sourceUrl": "https://www.fuji-net.co.jp/report/cat-tourism-event/13331/",
+    "note": "精進湖・他手合浜の代表位置"
+  },
+  "motosu": {
+    "coordinates": [
+      35.4643056,
+      138.585505
+    ],
+    "sourceUrl": "https://www.openstreetmap.org/relation/9440754",
+    "note": "湖の代表位置。駐車場の位置ではありません"
+  },
+  "pass": {
+    "coordinates": [
+      35.5564619,
+      138.7838598
+    ],
+    "sourceUrl": "https://www.openstreetmap.org/node/1798325969",
+    "officialUrl": "https://www.tenkachaya.jp/",
+    "note": "車道沿いの天下茶屋。既存P09の登山道上の峠とは異なります"
+  },
+  "oldTunnel": {
+    "coordinates": [
+      35.5587795,
+      138.7836896
+    ],
+    "sourceUrl": "https://www.openstreetmap.org/way/40796571",
+    "note": "県道708号の御坂隧道の代表位置"
+  },
+  "newTunnel": {
+    "coordinates": [
+      35.5585365,
+      138.7653965
+    ],
+    "sourceUrl": "https://www.openstreetmap.org/way/32881265",
+    "officialUrl": "https://www.pref.yamanashi.jp/kanjo/misaka.html",
+    "note": "国道137号の新御坂トンネルの代表位置"
+  }
+}
