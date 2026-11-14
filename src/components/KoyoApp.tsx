@@ -167,7 +167,7 @@ export default function KoyoApp() {
         <div className="header-top">
           <h1>紅葉ドライブ地図</h1>
         </div>
-        <nav className="route-filter" aria-label="行き先の方面">
+        <nav className="route-filter" aria-label="行き先の方面" hidden={!ready || planMode.active}>
           <button
             type="button"
             aria-pressed={state.route === "all"}

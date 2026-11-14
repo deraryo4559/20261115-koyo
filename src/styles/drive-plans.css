@@ -8,7 +8,17 @@
 .plan-command-controls button { flex: 0 0 68px; border: 1px solid var(--accent); background: var(--accent); color: var(--paper); }
 .drive-plan-command input { accent-color: var(--accent); }
 .drive-plan-command input:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-.plan-section-nav, .plan-map-options, .plan-mobile-route-summary { display: none; }
+.plan-section-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); position: sticky; top: 0; z-index: 50; padding-top: env(safe-area-inset-top); background: var(--paper); border-block: 1px solid var(--accent); margin-bottom: 16px; }
+.plan-section-nav button { min-height: 48px; padding: 8px 12px; border: 0; background: transparent; font-size: 14px; font-weight: 600; }
+.plan-section-nav button + button { border-left: 1px solid var(--line); }
+.plan-section-nav button[aria-selected=true] { background: var(--accent); color: var(--paper); box-shadow: inset 0 -3px 0 var(--ink); }
+#plan-map-section, #plan-shop-section { scroll-margin-top: calc(64px + env(safe-area-inset-top)); }
+.plan-map-options { margin-bottom: 14px; }
+.plan-map-plan-name { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+.plan-map-options .plan-route-options { max-width: 640px; padding: 10px 12px; }
+.plan-map-options .plan-foliage-choices { display: grid; grid-template-columns: 1.4fr 1fr; gap: 8px; }
+.plan-map-options .plan-foliage-choices label { background: #fffaf1; border: 1px solid var(--line); padding: 8px; font-size: 13px; }
+.plan-map-options .plan-foliage-choices label:has(input:checked) { border-color: var(--accent); background: #eadcc5; }
 .plan-command-error { grid-column: 2; color: var(--accent); font-size: 13px; }
 .plan-command-error:not(:empty) { padding-top: 8px; }
 .drive-plan-panel { margin-top: 24px; padding: 24px 0 8px; border-block: 1px solid var(--accent); overflow-wrap: anywhere; }
@@ -30,12 +40,11 @@
 .plan-candidate > .plan-map-link { align-self: flex-end; }
 .plan-clear { display: block; min-height: 44px; padding: 8px 0; border: 0; background: transparent; text-decoration: underline; text-underline-offset: 4px; font-size: 14px; }
 .plan-clear:disabled { color: var(--muted); text-decoration: none; }
-.drive-plan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 28px; }
-.drive-plan-card { min-width: 0; border-top: 3px solid var(--accent); padding-top: 14px; }
-.plan-card-heading { min-height: 102px; }
+.drive-plan-card { min-width: 0; max-width: 880px; margin: 28px auto 0; border-top: 3px solid var(--accent); padding-top: 14px; }
+.plan-card-heading { margin-bottom: 16px; }
 .plan-card-heading > p { font-size: 13px; color: var(--accent); margin-bottom: 6px; }
 .plan-card-heading h3 { font-family: var(--serif); font-size: clamp(20px, 2vw, 25px); font-weight: 600; line-height: 1.6; }
-.plan-route-options { background: var(--album); padding: 16px; min-height: 194px; }
+.plan-route-options { background: var(--album); padding: 16px; }
 .plan-route-options fieldset { min-width: 0; padding: 0; margin: 0; border: 0; }
 .plan-route-options legend { padding: 0 0 6px; font-weight: 600; font-size: 14px; }
 .plan-route-options label { display: flex; gap: 10px; align-items: baseline; min-height: 44px; padding: 8px 0; font-size: 15px; cursor: pointer; }
@@ -51,22 +60,6 @@
 .plan-stop-name time { white-space: nowrap; }
 .plan-stop-note { font-size: 12px; margin-top: 4px; color: var(--accent); }
 @media (max-width: 999px) {
-  .plan-section-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); position: sticky; top: 0; z-index: 50; padding-top: env(safe-area-inset-top); background: var(--paper); border-block: 1px solid var(--accent); margin-bottom: 16px; }
-  .plan-section-nav button { min-height: 48px; padding: 8px 4px; border: 0; background: transparent; font-size: 13px; font-weight: 600; }
-  .plan-section-nav button + button { border-left: 1px solid var(--line); }
-  #plan-map-section, #plan-shop-section, #plan-itinerary-section { scroll-margin-top: calc(64px + env(safe-area-inset-top)); }
-  .plan-map-options { display: block; margin-bottom: 14px; }
-  .plan-map-plan-name { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
-  .plan-map-options .plan-route-options { padding: 10px 12px; }
-  .plan-map-options .plan-foliage-choices { display: grid; grid-template-columns: 1.4fr 1fr; gap: 8px; }
-  .plan-map-options .plan-foliage-choices label { background: #fffaf1; border: 1px solid var(--line); padding: 8px; font-size: 13px; }
-  .plan-map-options .plan-foliage-choices label:has(input:checked) { border-color: var(--accent); background: #eadcc5; }
-  .drive-plan-card > .plan-route-options { display: none; }
-  .plan-mobile-route-summary { display: block; padding-bottom: 12px; font-size: 13px; color: var(--muted); }
-  .plan-mobile-route-summary button { min-height: 44px; margin-top: 6px; padding: 8px 12px; border: 1px solid var(--line); background: transparent; color: var(--accent); }
-  .drive-plan-grid { grid-template-columns: minmax(0, 1fr); }
-  .plan-card-heading { min-height: 0; margin-bottom: 16px; }
-  .plan-route-options { min-height: 0; }
   .plan-candidate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 599px) {
@@ -83,7 +76,6 @@
   .drive-plan-heading { flex-wrap: wrap; gap: 8px; }
   .plan-close { margin-left: auto; }
   .drive-plan-panel { margin-top: 18px; padding-top: 18px; }
-  .drive-plan-grid { gap: 32px; }
   .plan-itinerary li { gap: 6px; padding-left: 28px; }
   .plan-itinerary .plan-map-link { padding-inline: 6px; }
 }

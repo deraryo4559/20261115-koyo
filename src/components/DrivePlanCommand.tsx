@@ -1,5 +1,5 @@
 'use client';
-import { lazy, Suspense, useRef, useState, type FormEvent } from 'react';
+import { lazy, Suspense, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
 import { cafeCandidates, drivePlans, lunchCandidates, type PlanPlace, type PlanSelections } from '../data/drive-plans';
 import type { PlanModeState } from '../lib/plan-mode';
 import { buildItinerary, checkPlanCommand } from '../lib/drive-plans';
@@ -10,6 +10,10 @@ import MapErrorBoundary from './MapErrorBoundary';
 import '../styles/drive-plans.css';
 
 const DrivePlanMap = lazy(() => import('./DrivePlanMap'));
+const planTabs = [
+  { id: 'map', label: '地図', panel: 'plan-map-section' },
+  { id: 'shops', label: 'お店を選ぶ', panel: 'plan-shop-section' },
+] as const;
 
 function PlanOptions({ planId, scope, selections, onChange }: {
   planId: 'plan1' | 'plan2'; scope: string; selections: PlanSelections; onChange: (next: PlanSelections) => void;
@@ -67,8 +71,11 @@ export default function DrivePlanCommand({ mode, onChange }: { mode: PlanModeSta
   const { active: open, selections, mapPlan } = mode;
   const [error, setError] = useState('');
   const [announcement, setAnnouncement] = useState('');
+  const [view, setView] = useState<'map' | 'shops'>('map');
   const submitButton = useRef<HTMLButtonElement>(null);
+  const tabButtons = useRef<(HTMLButtonElement | null)[]>([]);
   const activePlan = drivePlans.find((plan) => plan.id === mapPlan)!;
+  const itinerary = buildItinerary(activePlan.stages, selections);
 
   function setSelections(update: (current: PlanSelections) => PlanSelections) {
     onChange({ selections: update(selections) });
@@ -85,13 +92,15 @@ export default function DrivePlanCommand({ mode, onChange }: { mode: PlanModeSta
     setError('');
     suppressRouletteForPlan();
     onChange({ active: true });
+    setView('map');
     event.currentTarget.querySelector('input')?.blur();
-    setAnnouncement('11/15 山梨ドライブプランの2つのルートを表示しました。');
+    setAnnouncement('11/15 山梨ドライブプランを表示しました。');
   }
   function close() {
     onChange({ active: false });
     setCommand('');
     setError('');
+    setView('map');
     setAnnouncement('コマンドモードを終了しました。');
     submitButton.current?.focus({ preventScroll: true });
   }
@@ -104,11 +113,26 @@ export default function DrivePlanCommand({ mode, onChange }: { mode: PlanModeSta
     setAnnouncement(cafeId ? `両ルートのカフェを${cafeCandidates.find((place) => place.id === cafeId)!.name}に変更しました。` : '両ルートのカフェを未選択に戻しました。');
   }
 
-  // Scroll only for an explicit navigation action, never for a candidate selection.
-  function goToSection(id: string) {
-    const section = document.getElementById(id);
-    section?.scrollIntoView({ block: 'start', behavior: 'instant' });
-    section?.focus({ preventScroll: true });
+  function selectView(next: 'map' | 'shops') {
+    setView(next);
+    // A pinned tab switches to the beginning of its content, not halfway down it.
+    // Candidate and route selections never call this navigation handler.
+    requestAnimationFrame(() => {
+      const panel = document.getElementById(planTabs.find((tab) => tab.id === next)!.panel);
+      const tabs = tabButtons.current[0]?.parentElement;
+      if (panel && tabs && panel.getBoundingClientRect().top < tabs.getBoundingClientRect().bottom) {
+        panel.scrollIntoView({ block: 'start', behavior: 'instant' });
+      }
+    });
+  }
+
+  function handleTabKey(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    const next = event.key === 'Home' ? 0 : event.key === 'End' ? planTabs.length - 1
+      : (index + (event.key === 'ArrowRight' ? 1 : -1) + planTabs.length) % planTabs.length;
+    selectView(planTabs[next].id);
+    tabButtons.current[next]?.focus({ preventScroll: true });
   }
 
   return <div className="drive-plan-command content-width">
@@ -129,12 +153,13 @@ export default function DrivePlanCommand({ mode, onChange }: { mode: PlanModeSta
           <h2 id="drive-plan-title">11/15 山梨ドライブプラン</h2>
           <button className="plan-close" type="button" onClick={close}>コマンドモードを終了にする</button>
         </div>
-        <nav className="plan-section-nav" aria-label="ドライブプラン内の移動">
-          <button type="button" onClick={() => goToSection('plan-map-section')}>地図</button>
-          <button type="button" onClick={() => goToSection('plan-shop-section')}>お店を選ぶ</button>
-          <button type="button" onClick={() => goToSection('plan-itinerary-section')}>行程を比較</button>
-        </nav>
-        <section id="plan-map-section" tabIndex={-1} className="plan-map-section" aria-labelledby="plan-map-title">
+        <div className="plan-section-nav" role="tablist" aria-label="プランの表示">
+          {planTabs.map((tab, index) => <button key={tab.id} id={`plan-tab-${tab.id}`} type="button" role="tab"
+            ref={(element) => { tabButtons.current[index] = element; }}
+            aria-selected={view === tab.id} aria-controls={tab.panel} tabIndex={view === tab.id ? 0 : -1}
+            onClick={() => selectView(tab.id)} onKeyDown={(event) => handleTabKey(event, index)}>{tab.label}</button>)}
+        </div>
+        <section id="plan-map-section" role="tabpanel" tabIndex={0} className="plan-map-section" aria-labelledby="plan-tab-map" hidden={view !== 'map'}>
           <div className="plan-map-heading"><h3 id="plan-map-title">ルートを地図で確認</h3>
             <div className="plan-map-switch" role="group" aria-label="地図に表示するプラン">
               {drivePlans.map((plan) => <button type="button" key={plan.id} aria-pressed={mapPlan === plan.id} onClick={() => onChange({ mapPlan: plan.id })}>{plan.label}</button>)}
@@ -144,32 +169,24 @@ export default function DrivePlanCommand({ mode, onChange }: { mode: PlanModeSta
             <p className="plan-map-plan-name">{activePlan.title}</p>
             <PlanOptions planId={mapPlan} scope="map" selections={selections} onChange={(next) => onChange({ selections: next })} />
           </div>
-          <MapErrorBoundary onRetry={() => window.location.reload()}><Suspense fallback={<p className="plan-map-loading" role="status">地図を読み込んでいます…</p>}>
-            <DrivePlanMap planId={mapPlan} label={activePlan.label} stops={buildItinerary(activePlan.stages, selections)} />
-          </Suspense></MapErrorBoundary>
-        </section>
-        <section id="plan-shop-section" tabIndex={-1} className="plan-shared-choices" aria-label="両ルート共通のお店選び">
-          <p className="plan-selection-help">ほうとう・カフェを各1店選ぶと、両ルートに反映されます。</p>
-          <CandidateGroup label="ほうとう候補" name="plan-lunch" candidates={lunchCandidates} value={selections.lunchId} onChange={selectLunch} />
-          <CandidateGroup label="カフェ候補" name="plan-cafe" candidates={cafeCandidates} value={selections.cafeId} onChange={selectCafe} />
-          <button className="plan-clear" type="button" disabled={selections.cafeId === null} onClick={() => selectCafe(null)}>カフェの選択を解除</button>
-        </section>
-        <section id="plan-itinerary-section" tabIndex={-1} className="drive-plan-grid" aria-label="2つのルートの行程比較">
-          {drivePlans.map((plan) => <article className="drive-plan-card" key={plan.id} aria-labelledby={`${plan.id}-title`}>
-            <div className="plan-card-heading"><p>{plan.label}</p><h3 id={`${plan.id}-title`}>{plan.title}</h3></div>
-            <PlanOptions planId={plan.id} scope={plan.id} selections={selections} onChange={(next) => onChange({ selections: next })} />
-            <div className="plan-mobile-route-summary">
-              <p>{plan.id === 'plan1' ? `紅葉スポット：${selections.plan1Foliage === 'corridor' ? '河口湖もみじ回廊' : '紅葉台'}` : `紅葉台：${selections.plan2Koyodai ? '立ち寄る' : '立ち寄らない'}`}</p>
-              {plan.id === 'plan2' && <p>紅葉台は富士山がよく見える場合のみ追加できます。</p>}
-              <button type="button" onClick={() => { onChange({ mapPlan: plan.id }); goToSection('plan-map-section'); }}>{plan.label}を地図で確認・変更</button>
-            </div>
-            <ol className="plan-itinerary" aria-label={`${plan.label}の訪問順`}>
-              {buildItinerary(plan.stages, selections).map((stop) => <li key={stop.id}>
+          {view === 'map' && <MapErrorBoundary onRetry={() => window.location.reload()}><Suspense fallback={<p className="plan-map-loading" role="status">地図を読み込んでいます…</p>}>
+            <DrivePlanMap planId={mapPlan} label={activePlan.label} stops={itinerary} />
+          </Suspense></MapErrorBoundary>}
+          <article id="plan-itinerary-section" className="drive-plan-card" aria-labelledby="plan-itinerary-title">
+            <div className="plan-card-heading"><p>{activePlan.label}の行程</p><h3 id="plan-itinerary-title">{activePlan.title}</h3></div>
+            <ol className="plan-itinerary" aria-label={`${activePlan.label}の訪問順`}>
+              {itinerary.map((stop) => <li key={stop.id}>
                 <div className="plan-stop-copy"><span className="plan-stop-category">{stop.category}</span><p className="plan-stop-name">{stop.departureTime && <time>{stop.departureTime} </time>}{stop.name}</p>{stop.note === '電話予約必要' && <p className="plan-stop-note">電話予約必要</p>}<AlbumLink place={stop} /></div>
                 <MapLink place={stop} />
               </li>)}
             </ol>
-          </article>)}
+          </article>
+        </section>
+        <section id="plan-shop-section" role="tabpanel" tabIndex={0} className="plan-shared-choices" aria-labelledby="plan-tab-shops" hidden={view !== 'shops'}>
+          <p className="plan-selection-help">ほうとう・カフェを各1店選ぶと、両ルートに反映されます。</p>
+          <CandidateGroup label="ほうとう候補" name="plan-lunch" candidates={lunchCandidates} value={selections.lunchId} onChange={selectLunch} />
+          <CandidateGroup label="カフェ候補" name="plan-cafe" candidates={cafeCandidates} value={selections.cafeId} onChange={selectCafe} />
+          <button className="plan-clear" type="button" disabled={selections.cafeId === null} onClick={() => selectCafe(null)}>カフェの選択を解除</button>
         </section>
       </>}
     </section>

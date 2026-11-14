@@ -68,11 +68,18 @@ export default function DrivePlanMap({ stops, planId, label }: Props) {
     const connectors = leaflet.layerGroup().addTo(layer);
     const markers: { marker: Leaflet.Marker; id: string; coordinates: [number, number] }[] = [];
     const color = planId === 'plan1' ? '#883d27' : '#28647b';
-    itineraryRoadLegs(stops).forEach(({ coordinates: points }) => {
-      if (!points) return;
-      leaflet.polyline(points, { color: '#fffaf1', weight: 7, opacity: .9, interactive: false }).addTo(layer);
-      leaflet.polyline(points, { color, weight: 3.5, opacity: .95, interactive: false, className: 'plan-visit-line' }).addTo(layer);
-    });
+    const roads = itineraryRoadLegs(stops);
+    const roadStyle: Leaflet.PolylineOptions = { smoothFactor: 0, lineCap: 'round', lineJoin: 'round', interactive: false };
+    // Draw every casing first. At wide zoom, a later leg's white casing used to
+    // erase an earlier colored leg where roads run close together or retrace.
+    for (const road of roads) {
+      if (road.coordinates) leaflet.polyline(road.coordinates, { ...roadStyle, color: '#fffaf1', weight: 7, opacity: .9, className: 'plan-road-outline' }).addTo(layer);
+    }
+    for (const road of roads) {
+      if (!road.coordinates) continue;
+      const line = leaflet.polyline(road.coordinates, { ...roadStyle, color, weight: 4, opacity: 1, className: 'plan-visit-line' }).addTo(layer);
+      line.getElement()?.setAttribute('data-plan-leg', road.key);
+    }
     itineraryMapStops(stops).forEach((stop) => {
       const marker = leaflet.marker(stop.coordinates, {
         title: `${stop.order}. ${stop.name}`, keyboard: true, autoPanOnFocus: false, riseOnHover: true,
